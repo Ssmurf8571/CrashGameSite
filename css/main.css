@@ -1,0 +1,97 @@
+*::-webkit-input-placeholder {color: #666; opacity: 1;}
+*:-moz-placeholder {color: #666;opacity: 1;}
+*::-moz-placeholder {color: #666;opacity: 1;}
+*:-ms-input-placeholder {color: #666;opacity: 1;}
+body input:focus:required:invalid, body textarea:focus:required:invalid {}
+body input:required:valid, body textarea:required:valid {}
+html.js .loader {background: none repeat scroll 0 0 #ffffff;bottom: 0;height: 100%;left: 0;position: fixed;right: 0;top: 0;width: 100%;z-index: 9999;}
+html.js .loader_inner {background-image: url("../img/preloader.gif");background-size: cover;background-repeat: no-repeat;background-position: center center;background-color: #fff;height: 60px;width: 60px;margin-top: -30px;margin-left: -30px;left: 50%;top: 50%;position: absolute;}
+body {
+	font-family: sans-serif;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.6;
+	font-family: 'Montserrat', sans-serif;
+	overflow-x: hidden;
+	background-color: #2A2D33;
+}
+input:focus,select:focus,button:focus,textarea:focus {outline: none;}
+a {text-decoration: none;outline: none;}
+ul,ol {padding: 0;margin: 0;list-style: none;}
+
+.hidden {display: none;}
+
+h1,h2,h3,h4,h5,h6 {	margin: 0;	color: #fff;}
+
+h1 {font-size: 185px;}
+h2 {font-size: 60px;}
+h3 {font-size: 30px;}
+h4 {font-size: 18px;}
+h5 {font-size: 16px;}
+h6 {font-size: 14px;}
+p {font-size: 12px;}
+
+header {
+	padding: 15px;
+}
+
+header .header__wraper {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .header__wraper > .app__logo > h3 {
+  font-family: 'Montserrat';
+}
+
+header .header__wraper > .app__nav__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app__nav__menu > .app__nav__page__language {
+
+}
+
+.app__nav__page__language > .app__nav__language__current {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f2424;
+  border: 1px solid #242635;
+  border-radius: 5px;
+}
+
+.app__nav__language__current > #page__language, .app__nav__page__language > .app__nav__language__current > svg {
+  padding: 5px;
+}
+
+.app__nav__language__current > #page__language {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.app__nav__page__language > .app__nav__language__current > svg {
+  width: 23px;
+  fill: #fff;
+}
+
+.app__nav__page__language > .app__nav__language__dropdown {
+  display: none;
+}
+
+.app__nav__language__dropdown > .app__nav__language {
+  color: #fff;
+}
+
+.app__nav__menu > .app__nav__page__nightmode {
+  margin-left: 15px;
+  padding: 2px 5px 0px;
+  background-color: #1f2424;
+  border: 1px solid #242635;
+  border-radius: 5px;
+}
+
+.app__nav__menu > .app__nav__page__nightmode > svg {
+  color: #fff;
+}
