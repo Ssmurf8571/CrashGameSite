@@ -46,7 +46,7 @@ $(window).on('load', function() {
 });
 
 $( ".app__nav__language__current" ).click(function() {
-  var dropdown_btn_lang = document.getElementsByClassName('.app__nav__language__dropdown');
+  var dropdown_btn_lang = document.getElementById('app__nav__language__dropdown');
   dropdown_btn_lang.classList.toggle("active");
 });
 

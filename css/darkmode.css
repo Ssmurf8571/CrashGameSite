@@ -9,9 +9,24 @@
 
 .dark-mode .app__nav__page__language > .app__nav__language__current, .dark-mode .app__nav__menu > .app__nav__page__nightmode {
   background-color: #ccc;
-  border: 2px solid #969696;
+  border: 1px solid #969696;
 }
 
 .dark-mode .app__nav__language__current > svg {
   fill: #000;
+}
+
+.dark-mode .app__nav__page__language > .app__nav__language__dropdown {
+  background-color: #ccc;
+  border: 1px solid #969696;
+  border-radius: 5px;
+  color: #000;
+}
+
+.dark-mode .app__nav__language__dropdown > .app__nav__language {
+  color: #000;
+}
+
+.dark-mode .app__nav__page__language > .app__nav__language__current {
+  width: 84px;
 }

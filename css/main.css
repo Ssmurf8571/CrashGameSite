@@ -46,15 +46,15 @@ header .header__wraper > .app__logo > h3 {
 
 header .header__wraper > .app__nav__menu {
   display: flex;
-  align-items: center;
 }
 
 .app__nav__menu > .app__nav__page__language {
-
+  text-align: center;
 }
 
 .app__nav__page__language > .app__nav__language__current {
-  padding: 0 5px;
+  width: 82px;
+  padding: 1.5px 5px;
   display: flex;
   justify-content: space-between;
   background-color: #1f2424;
@@ -78,20 +78,31 @@ header .header__wraper > .app__nav__menu {
 
 .app__nav__page__language > .app__nav__language__dropdown {
   display: none;
+  margin: 5px 0 0;
+  padding: 5px 15px;
+  background-color: #1f2424;
+  border-radius: 5px;
 }
 
 .app__nav__language__dropdown > .app__nav__language {
+  display: block;
   color: #fff;
+  text-align: left;
 }
 
 .app__nav__menu > .app__nav__page__nightmode {
   margin-left: 15px;
-  padding: 2px 5px 0px;
+  padding: 5px 5px 0px;
   background-color: #1f2424;
+  height: fit-content;
   border: 1px solid #242635;
   border-radius: 5px;
 }
 
 .app__nav__menu > .app__nav__page__nightmode > svg {
   color: #fff;
+}
+
+.app__nav__page__language > .active {
+  display: block;
 }
