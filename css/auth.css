@@ -1,0 +1,135 @@
+.container_auth > input[type=text], .container_auth > input[type=email], .container_auth > input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background: #2A2D33;
+  border: 1px solid #3c3c3c;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.container_auth > input::placeholder {
+  color: #fff;
+}
+
+.container_auth > button[type=submit], .clearfix > button[type=submit] {
+  background: #4CAF50;
+  color: #fff;
+  padding: 10px 18px;
+  border: 0;
+}
+
+.nav-item button {
+  cursor: pointer;
+}
+
+.nav-item button:hover {
+  opacity: 0.8;
+}
+
+.container_auth > .cancelbtn, .clearfix > .cancelbtn {
+  color: #fff;
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  border: 0;
+}
+
+.modal-content > .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.container_auth {
+  padding: 16px;
+}
+
+.container_auth span.psw {
+  float: right;
+  padding: 10px;
+}
+
+.container_auth  span a {
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+#id01 > form > div:nth-child(3) > span:nth-child(4) {
+  margin: 0 12% 0 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #2A2D33;
+  margin: 5% auto 15% auto;
+  border: 1px solid #2A2D33;
+  max-width: 720px;
+}
+
+.imgcontainer > .close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  margin: -19px 0 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.imgcontainer > .close:hover,
+.imgcontainer > .close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.modal label, .modal .container_auth span, .modal .container_auth span > a, .container_auth > p {
+  color: #fff;
+}
+
+.modal > .animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+@media only screen and (max-width : 620px) {
+  .container_auth span.psw {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+
+  #id01 > form > div:nth-child(3) > span:nth-child(4) {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn {
+    width: 100%;
+  }
+}

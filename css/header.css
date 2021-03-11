@@ -1,0 +1,95 @@
+header {
+	padding: 15px;
+}
+
+header .header__wraper {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .header__wraper > .app__logo h3 {
+  font-family: 'Montserrat';
+}
+
+header .header__wraper > .app__nav__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app__nav__menu > .app__nav__page__language {
+  text-align: center;
+}
+
+.app__nav__page__language > .app__nav__language__current > a {
+  width: 82px;
+  padding: 1.5px 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f2424;
+  border: 1px solid #242635;
+  border-radius: 5px;
+}
+
+.app__nav__language__current > a:hover {
+  text-decoration: none;
+}
+
+.app__nav__language__current #page__language, .app__nav__page__language > .app__nav__language__current svg {
+  padding: 5px;
+}
+
+.app__nav__language__current #page__language {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.app__nav__page__language > .app__nav__language__current svg {
+  width: 23px;
+  fill: #fff;
+}
+
+.app__nav__page__language > .app__nav__language__dropdown {
+  display: none;
+  margin: 5px 0 0;
+  padding: 5px 15px;
+  background-color: #1f2424;
+  border-radius: 5px;
+}
+
+.app__nav__language__dropdown > .app__nav__language {
+  display: block;
+  color: #fff;
+  text-align: left;
+}
+
+.app__nav__menu > .app__nav__page__nightmode {
+  margin: 0 15px;
+  padding: 5px 5px 0px;
+  background-color: #1f2424;
+  height: fit-content;
+  border: 1px solid #242635;
+  border-radius: 5px;
+}
+
+.app__nav__menu > .app__nav__page__nightmode svg {
+  color: #fff;
+}
+
+.app__nav__page__language > .active {
+  display: block;
+}
+
+.nav-item > button {
+  padding: 5px 10px;
+  background-color: #1f2424;
+  border: 1px solid #242635;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.pers__area > a#login__btn {
+  padding: 9px 15px;
+  font-size: 16px;
+  color: #fff;
+}
