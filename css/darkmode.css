@@ -3,16 +3,16 @@
   color: #000;
 }
 
-.dark-mode .app__logo > h3, .dark-mode .app__nav__language__current > span#page__language, .dark-mode .app__nav__page__nightmode > svg {
+.dark-mode .app__logo h3, .dark-mode .app__nav__language__current span#page__language, .dark-mode .app__nav__page__nightmode svg, .dark-mode #login_btn {
   color: #000;
 }
 
-.dark-mode .app__nav__page__language > .app__nav__language__current, .dark-mode .app__nav__menu > .app__nav__page__nightmode {
+.dark-mode .app__nav__page__language > .app__nav__language__current > a, .dark-mode .app__nav__menu > .app__nav__page__nightmode, .dark-mode #login_btn {
   background-color: #ccc;
   border: 1px solid #969696;
 }
 
-.dark-mode .app__nav__language__current > svg {
+.dark-mode .app__nav__language__current svg {
   fill: #000;
 }
 
