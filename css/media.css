@@ -35,16 +35,23 @@
 		animation: none !important;
 	}
 
+	header .app__logo h3 > span:nth-child(1) {
+		display: none;
+	}
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-
+	header .app__logo h3 > span:nth-child(2) {
+		display: none;
+	}
 }
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 320px) {
-
+@media only screen and (max-width : 350px) {
+	.app__nav__menu > .app__nav__page__nightmode {
+		margin: 0 auto;
+	}
 }
 
 

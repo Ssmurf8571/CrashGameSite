@@ -13,7 +13,7 @@ header .header__wraper > .app__logo h3 {
 
 header .header__wraper > .app__nav__menu {
   display: flex;
-  align-items: center;
+  margin: 6px 0 0;
 }
 
 .app__nav__menu > .app__nav__page__language {
@@ -79,6 +79,10 @@ header .header__wraper > .app__nav__menu {
   display: block;
 }
 
+.nav-item {
+  list-style: none;
+}
+
 .nav-item > button {
   padding: 5px 10px;
   background-color: #1f2424;
@@ -88,8 +92,15 @@ header .header__wraper > .app__nav__menu {
   color: #fff;
 }
 
+.pers__area {
+  margin: 7px 0 0;
+}
+
 .pers__area > a#login__btn {
   padding: 9px 15px;
+  background-color: #1f2424;
+  border: 1px solid #242635;
+  border-radius: 5px;
   font-size: 16px;
   color: #fff;
 }

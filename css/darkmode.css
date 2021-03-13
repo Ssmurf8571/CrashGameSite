@@ -30,3 +30,9 @@
 .dark-mode .app__nav__page__language > .app__nav__language__current {
   width: 84px;
 }
+
+.dark-mode a#login__btn {
+  background-color: #ccc;
+  border: 1px solid #969696;
+  color: #000;
+}
