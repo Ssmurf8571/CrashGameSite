@@ -17,6 +17,8 @@ $( ".app__nav__page__nightmode" ).click(function() {
 });
 
 
+
+
 $( "#login_btn" ).click(function() {
 
 	document.getElementById("id01").style.display = "block";
