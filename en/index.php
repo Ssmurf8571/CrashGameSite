@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/chat.css">
 	<link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/darkmode.css">
 	<link rel="stylesheet" href="../css/media.css">
@@ -81,71 +82,77 @@
     </div>
   </header>
 
+  <div class="main__wrapper">
+    <div class="left__sidebar">
+      <div class="login__form">
+        <div id="id01" class="modal">     
+          <form class="modal-content animate" action="/CrashGameSite/php/login.php" method="post">
+            <div class="imgcontainer">
+              <span class="close" id="close" title="Close Modal">&times;</span>
+            </div>
+        
+            <div class="container_auth">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" name="login" placeholder="Enter Username" name="uname" required>
+        
+              <label for="psw"><b>Password</b></label>
+              <input type="password" name="password" placeholder="Enter Password" name="psw" required>
+                
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+        
+            <div class="container_auth" style="background-color:#2A2D33">
+              <button type="button" id="close" class="cancelbtn" >Cancel</button>
+              <button type="submit">Login</button>
+              <span class="psw register_btn clear__hash"><a class="clear__hash" href="#">register?</a></span>
+              <span class="psw clear__hash">Forgot <a class="clear__hash" href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
 
-  <div class="login__form">
-    <div id="id01" class="modal">     
-      <form class="modal-content animate" action="/CrashGameSite/php/login.php" method="post">
-        <div class="imgcontainer">
-          <span class="close" id="close" title="Close Modal">&times;</span>
+      <div class="register_form">
+
+        <div id="id02" class="modal">
+          <span class="close" title="Close Modal">&times;</span>
+          <form id="form_register" class="modal-content animate" action="/CrashGameSite/php/reg.php" method="post">
+            <div class="imgcontainer">
+              <span class="close" id="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container_auth">
+              <label for="login"><b>Username</b></label>
+              <input name="login" type="text" placeholder="Enter Username" required>
+
+              <label for="email"><b>Email</b></label>
+              <input name="email" type="email" placeholder="Enter Email" required>
+
+              <label for="psw"><b>Password</b></label>
+              <input name="password" type="password" class="reg_form__password" id="form__password" placeholder="Enter Password" required>
+
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input name="psw-repeat" type="password" class="reg_form__password" id="form_re__password" placeholder="Repeat Password" required>
+              
+              <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              </label>
+
+              <p>By creating an account you agree to our <a class="clear__hash" href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>       
+
+              <div id="error__message"></div>
+
+              <div class="clearfix">
+                <button type="button" class="cancelbtn" id="close">Cancel</button>
+                <button type="submit" name="submit" class="signupbtn submit">Sign Up</button>
+              </div>
+            </div>
+          </form>
         </div>
-    
-        <div class="container_auth">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" name="login" placeholder="Enter Username" name="uname" required>
-    
-          <label for="psw"><b>Password</b></label>
-          <input type="password" name="password" placeholder="Enter Password" name="psw" required>
-            
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-        </div>
-    
-        <div class="container_auth" style="background-color:#2A2D33">
-          <button type="button" id="close" class="cancelbtn" >Cancel</button>
-          <button type="submit">Login</button>
-          <span class="psw register_btn clear__hash"><a class="clear__hash" href="#">register?</a></span>
-          <span class="psw clear__hash">Forgot <a class="clear__hash" href="#">password?</a></span>
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
+    <div class="Right__sidebar">
 
-  <div class="register_form">
-
-    <div id="id02" class="modal">
-      <span class="close" title="Close Modal">&times;</span>
-      <form id="form_register" class="modal-content animate" action="/CrashGameSite/php/reg.php" method="post">
-        <div class="imgcontainer">
-          <span class="close" id="close" title="Close Modal">&times;</span>
-        </div>
-        <div class="container_auth">
-          <label for="login"><b>Username</b></label>
-          <input name="login" type="text" placeholder="Enter Username" required>
-
-          <label for="email"><b>Email</b></label>
-          <input name="email" type="email" placeholder="Enter Email" required>
-
-          <label for="psw"><b>Password</b></label>
-          <input name="password" type="password" class="reg_form__password" id="form__password" placeholder="Enter Password" required>
-
-          <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input name="psw-repeat" type="password" class="reg_form__password" id="form_re__password" placeholder="Repeat Password" required>
-          
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-          </label>
-
-          <p>By creating an account you agree to our <a class="clear__hash" href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>       
-
-          <div id="error__message"></div>
-
-          <div class="clearfix">
-            <button type="button" class="cancelbtn" id="close">Cancel</button>
-            <button type="submit" name="submit" class="signupbtn submit">Sign Up</button>
-          </div>
-        </div>
-      </form>
     </div>
   </div>
 
@@ -156,7 +163,7 @@
 	</div>
 
   <div>
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
       
       <script src="../js/common.js"></script>
 
