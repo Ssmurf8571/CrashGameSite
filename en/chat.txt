@@ -1,0 +1,3 @@
+admin         | translate to RushA
+test         | 123abcабв
+1         | %u043F%u0440%u0438%u0432%u0435%u0442 %u043C%u0438%u0440!

@@ -1,0 +1,45 @@
+.right__sidebar #content {
+    position: relative;
+}
+
+.right__sidebar #chatwindow {
+    width: 320px;
+    height: calc(100vh - 138px);
+    color: rgb(255, 255, 255);
+    padding: 10px 0px 0px 10px;
+    background: rgb(31, 36, 36);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(36, 38, 53);
+    border-image: initial;
+    border-radius: 5px 0px 0px;
+}
+
+.right__sidebar #chatnick {
+    display: none;
+}
+
+.right__sidebar #chatmsg {
+    position: absolute;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    margin: -8px 0px 0px;
+    padding: 10px 0px 10px 10px;
+    background: rgb(31, 36, 36);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(36, 38, 53);
+    border-image: initial;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.right__sidebar #chatmsg::placeholder {
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.right__sidebar input[type="button"] {
+    display: none;
+}
