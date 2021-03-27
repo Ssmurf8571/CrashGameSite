@@ -7,7 +7,7 @@
     $fn = "chat.txt";
     $maxlines = 20;
 
-    $nick_maxlength = 10;
+    $nick_maxlength = 4;
 
     /* Set this to a minimum wait time between posts (in sec) */
     $waittime_sec = 0;
@@ -40,7 +40,7 @@
         if (strlen($msg) < 2) { die(); }
         if (strlen($msg) > 3) {
             /* Smilies are ok */
-            if (strtoupper($msg) == $msg) { die(); }
+            if (mb_strtoupper($msg) == $msg) { die(); }
         }
         if (strlen($msg) > 150) { die(); }
         if (strlen($msg) > 15) {
@@ -51,9 +51,9 @@
             if ($_SERVER["REMOTE_ADDR"] == $a) { die(); }
         }
 
-        $mystring = strtoupper($msg);
+        $mystring = mb_strtoupper($msg);
         foreach ($spam as $a) {
-             if (strpos($mystring, strtoupper($a)) === false) {
+             if (strpos($mystring, mb_strtoupper($a)) === false) {
                  /* Everything Ok Here */
              } else {
                  die();
@@ -61,7 +61,7 @@
         }
 
         foreach ($espam as $a) {
-            if (strtoupper($msg) == strtoupper($a)) { die(); }
+            if (mb_strtoupper($msg) == mb_strtoupper($a)) { die(); }
         }
 
         $handle = fopen ($fn, 'r');
@@ -87,7 +87,7 @@
         if (strlen($n) > $nick_maxlength-1) $n = substr($n, 0, $nick_maxlength-1);
         for ($i=0; $i<($nick_maxlength - strlen($n)); $i++) $spaces .= " ";
 
-        $out = $chattext . $n . $spaces . "| " . $msg . "\n";
+        $out = $chattext . $n . $spaces . " " . $msg . "\n";
         $out = str_replace("\'", "'", $out);
         $out = str_replace("\\\"", "\"", $out);
 
