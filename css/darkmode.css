@@ -8,7 +8,7 @@
 }
 
 .dark-mode .app__nav__page__language > .app__nav__language__current > a, .dark-mode .app__nav__menu > .app__nav__page__nightmode, .dark-mode #login_btn {
-  background-color: #ccc;
+  background-color: #ebebeb;
   border: 1px solid #969696;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .dark-mode .app__nav__page__language > .app__nav__language__dropdown {
-  background-color: #ccc;
+  background-color: #ebebeb;
   border: 1px solid #969696;
   border-radius: 5px;
   color: #000;
@@ -32,7 +32,16 @@
 }
 
 .dark-mode a#login__btn {
-  background-color: #ccc;
+  background-color: #ebebeb;
   border: 1px solid #969696;
   color: #000;
+}
+
+.dark-mode .right__sidebar #chatwindow, .dark-mode .right__sidebar #chatmsg {
+  background: #f5f5f5;
+  color: #000;
+}
+
+.dark-mode .right__sidebar #chatmsg::placeholder {
+  color: #474747;
 }

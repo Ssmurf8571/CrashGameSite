@@ -50,11 +50,13 @@ header .header__wraper > .app__nav__menu {
 }
 
 .app__nav__page__language > .app__nav__language__dropdown {
+  position: absolute;
   display: none;
   margin: 5px 0 0;
   padding: 5px 15px;
   background-color: #1f2424;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .app__nav__language__dropdown > .app__nav__language {
