@@ -2,17 +2,22 @@
     position: relative;
 }
 
+.right__sidebar #chatwindow, .right__sidebar #chatmsg {
+    color: rgb(255, 255, 255);
+    background: rgb(31, 36, 36);
+    border: 1px solid #242635;
+}
+
 .right__sidebar #chatwindow {
     width: 320px;
     height: calc(100vh - 138px);
-    color: rgb(255, 255, 255);
     padding: 10px 0px 0px 10px;
-    background: rgb(31, 36, 36);
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(36, 38, 53);
-    border-image: initial;
     border-radius: 5px 0px 0px;
+    overflow: auto;
+}
+
+.right__sidebar #chatwindow::-webkit-scrollbar {
+    width: 0; 
 }
 
 .right__sidebar #chatnick {
@@ -22,24 +27,26 @@
 .right__sidebar #chatmsg {
     position: absolute;
     width: 100%;
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    margin: -8px 0px 0px;
+    margin: -25px 0px 0px;
     padding: 10px 0px 10px 10px;
-    background: rgb(31, 36, 36);
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(36, 38, 53);
-    border-image: initial;
     border-radius: 0px 0px 0px 5px;
+}
+
+.right__sidebar #chatmsg, .right__sidebar #chatmsg::placeholder {
+    font-size: 12px;
 }
 
 .right__sidebar #chatmsg::placeholder {
     color: #fff;
-    font-size: 12px;
     text-transform: uppercase;
 }
 
-.right__sidebar input[type="button"] {
+.right__sidebar button[type="submit"] {
     display: none;
+}
+
+#chatwindow > span.date {
+    margin: 0 10px 0;
+    color: #969696;
+    font-size: 10px;
 }

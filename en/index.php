@@ -86,7 +86,7 @@
     <div class="left__sidebar">
       <div class="login__form">
         <div id="id01" class="modal">     
-          <form class="modal-content animate" action="/CrashGameSite/php/login.php" method="post">
+          <form class="modal-content animate" action="/CrashGameSite/libs/authorization/login.php" method="post">
             <div class="imgcontainer">
               <span class="close" id="close" title="Close Modal">&times;</span>
             </div>
@@ -152,13 +152,17 @@
       </div>
     </div>
     <div class="right__sidebar">
-      <div id="content">
-        <textarea id="chatwindow" rows="19" cols="95" readonly=""></textarea><br>
+      <form action="send_msg.php" id="content" method="GET">
+        <div id="chatwindow">
+          <?php
+            require('chat.php');
+          ?>
+        </div><br>
         <?php
-          echo '<input id="chatnick" value="'.$_SESSION['login'].'">';
+          echo '<input id="chatnick" value="'.$_SESSION['login'].'" name="login">';
         ?>
-        <input id="chatmsg" type="text" onkeyup="keyup(event.keyCode);" placeholder="message">
-        <input type="button" onclick="submit_msg();">
+        <input id="chatmsg" type="text" name="msg" onkeyup="keyup(event.keyCode);" placeholder="message" autocomplete="off">
+        <button type="submit" onclick="submit_msg();"></button>
       </div>
     </div>
   </div>
@@ -181,9 +185,15 @@
           e.preventDefault();
         });
       </script>
-      <script type="text/javascript">
+
+        <script>
+          $('#chatwindow').animate({
+          scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);    
+        </script>
+
+      <!--<script type="text/javascript">
         /* most simple ajax chat script (www.linuxuser.at) (GPLv2) */
-        var nick_maxlength=10;
+        var nick_maxlength=4;
         var http_request=false;
         var http_request2=false;
         var intUpdate;
@@ -201,7 +211,7 @@
         /* chat stuff */
         chatmsg.focus()
         var show_newmsg_on_bottom=1;     /* set to 0 to let new msg´s appear on top */
-        var waittime=3000;        /* time between chat refreshes (ms) */
+        var waittime=100;        /* time between chat refreshes (ms) */
 
         intUpdate=window.setTimeout("read_cont();", waittime);
         chatwindow.value = "loading...";
@@ -209,8 +219,8 @@
         function read_cont()         { zeit = new Date(); ms = (zeit.getHours() * 24 * 60 * 1000) + (zeit.getMinutes() * 60 * 1000) + (zeit.getSeconds() * 1000) + zeit.getMilliseconds(); ajax_request2("chat.txt?x=" + ms); }
         function display_msg(msg1)     { chatwindow.value = msg1.trim(); }
         function keyup(arg1)         { if (arg1 == 13) submit_msg(); }
-        function submit_msg()         { clearTimeout(intUpdate); if (chatnick.value == "") { check = prompt("please enter username:"); if (check === null) return 0; if (check == "") check="..."; chatnick.value=check; } if (chatnick.value.length > nick_maxlength) chatnick.value=chatnick.value.substring(0,nick_maxlength); spaces=""; for(i=0;i<(nick_maxlength-chatnick.value.length);i++) spaces+=" "; v=chatwindow.value.substring(chatwindow.value.indexOf("\n")) + "\n" + chatnick.value + spaces + "| " + chatmsg.value; if (chatmsg.value != "") chatwindow.value=v.substring(1); write_msg(chatmsg.value,chatnick.value); chatmsg.value=""; intUpdate=window.setTimeout("read_cont();", waittime);}
-        function write_msg(msg1,nick1)     { ajax_request("w.php?m=" + escape(msg1) + "&n=" + escape(nick1)); }
+        function submit_msg()         { clearTimeout(intUpdate); if (chatnick.value == "") { check = prompt("please enter username:"); if (check === null) return 0; if (check == "") check="..."; chatnick.value=check; } if (chatnick.value.length > nick_maxlength) chatnick.value=chatnick.value.substring(0,nick_maxlength); spaces=""; for(i=0;i<(nick_maxlength-chatnick.value.length);i++) spaces+=" "; v=chatwindow.value.substring(chatwindow.value.indexOf("\n")) + "\n" + chatnick.value + spaces + " " + chatmsg.value; if (chatmsg.value != "") chatwindow.value=v.substring(1); write_msg(chatmsg.value,chatnick.value); chatmsg.value=""; intUpdate=window.setTimeout("read_cont();", waittime);}
+        function write_msg(msg1,nick1)     { ajax_request("test.php?msg=" + escape(msg1) + "&user=" + escape(nick1)); }
         function rec_response(str1)     { }
 
         function rec_chatcontent(cont1) {
@@ -221,7 +231,7 @@
                 intUpdate=window.setTimeout("read_cont()", waittime);
             }
         }
-      </script>
+      </script>-->
   </div>
 
 </body>
