@@ -4,7 +4,6 @@ $(window).on('load', function() {
 	$(".loader").delay(400).fadeOut("slow");
 });
 
-
 $(document).ready(function(){  
           
 	$('#submit-msg').click(function() {
@@ -18,6 +17,16 @@ $(document).ready(function(){
 				data : {
 				login : login,
 				msg : msg
+				},
+				success : function(data) {
+					$.ajax({
+						url : "chat.php",
+						type: "GET",
+						success : function(data) {
+							document.getElementById('chatmsg').value='';
+							$('#chatwindow').html(data);
+						}
+					});
 				}
 		});
 		return false;
@@ -25,8 +34,6 @@ $(document).ready(function(){
 	});
 	  
 });
-
-
 
 $( ".app__nav__language__current" ).click(function() {
   var dropdown_btn_lang = document.getElementById('app__nav__language__dropdown');
