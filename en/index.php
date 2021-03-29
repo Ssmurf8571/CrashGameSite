@@ -152,17 +152,17 @@
       </div>
     </div>
     <div class="right__sidebar">
-      <form action="send_msg.php" id="content" method="GET">
+      <form id="content" action="" method="POST">
         <div id="chatwindow">
           <?php
             require('chat.php');
           ?>
-        </div><br>
+        </div>
         <?php
           echo '<input id="chatnick" value="'.$_SESSION['login'].'" name="login">';
         ?>
-        <input id="chatmsg" type="text" name="msg" onkeyup="keyup(event.keyCode);" placeholder="message" autocomplete="off">
-        <button type="submit" onclick="submit_msg();"></button>
+        <input id="chatmsg" type="text" name="msg" placeholder="message" autocomplete="off">
+        <button id="submit-msg" type="submit"></button>
       </div>
     </div>
   </div>
@@ -186,10 +186,10 @@
         });
       </script>
 
-        <script>
-          $('#chatwindow').animate({
-          scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);    
-        </script>
+      <script>
+        $('#chatwindow').animate({
+        scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);    
+      </script>
 
       <!--<script type="text/javascript">
         /* most simple ajax chat script (www.linuxuser.at) (GPLv2) */
