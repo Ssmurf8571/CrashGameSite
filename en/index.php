@@ -158,6 +158,7 @@
             require('chat.php');
           ?>
         </div>
+        <br>
         <?php
           echo '<input id="chatnick" value="'.$_SESSION['login'].'" name="login">';
         ?>
@@ -187,8 +188,10 @@
       </script>
 
       <script>
-        $('#chatwindow').animate({
-        scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);    
+        setInterval(() => {
+          $('#chatwindow').animate({
+          scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);
+        }, 1000);
       </script>
 
       <!--<script type="text/javascript">
