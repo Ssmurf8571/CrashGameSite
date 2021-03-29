@@ -1,9 +1,31 @@
-
 $(window).on('load', function() {
 
 	$(".loader_inner").fadeOut();
 	$(".loader").delay(400).fadeOut("slow");
 });
+
+
+$(document).ready(function(){  
+          
+	$('#submit-msg').click(function() {
+		var login = $(this).parent().find('input[name="login"]').val();
+		var msg = $(this).parent().find('input[name="msg"]').val();
+		var data = $(this).parents('form').serialize()
+
+		$.ajax({
+				url : "send_msg.php",
+				type : "POST",
+				data : {
+				login : login,
+				msg : msg
+				}
+		});
+		return false;
+
+	});
+	  
+});
+
 
 
 $( ".app__nav__language__current" ).click(function() {
@@ -15,9 +37,6 @@ $( ".app__nav__page__nightmode" ).click(function() {
   var body_dark__mode = document.body;
   body_dark__mode.classList.toggle("dark-mode");
 });
-
-
-
 
 $( "#login_btn" ).click(function() {
 
@@ -33,7 +52,6 @@ $( "#login_btn" ).click(function() {
 	}
 });
 
-
 $( ".close" ).click(function() {
 
 	document.getElementById("id01").style.display = "none";
@@ -45,7 +63,6 @@ $(".cancelbtn").click(function() {
     document.getElementById("id01").style.display = "none";
 	document.getElementById("id02").style.display = "none";
 });
-
 
 $( ".register_btn" ).click(function() {
 
