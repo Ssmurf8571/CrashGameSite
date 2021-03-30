@@ -27,8 +27,8 @@
 	
 	<link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/auth.css">
   <link rel="stylesheet" href="../css/chat.css">
+  <link rel="stylesheet" href="../css/auth.css">
 	<link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/darkmode.css">
 	<link rel="stylesheet" href="../css/media.css">
@@ -43,7 +43,7 @@
     <div class="container">
       <div class="header__wraper">
         <div class="app__logo">
-          <a href="./index.php">
+          <a href="./">
             <h3>C<span>rush</span>G<span>ame</span></h3>
           </a>
         </div>
@@ -103,7 +103,7 @@
               </label>
             </div>
         
-            <div class="container_auth" style="background-color:#2A2D33">
+            <div class="container_auth">
               <button type="button" id="close" class="cancelbtn" >Cancel</button>
               <button type="submit">Login</button>
               <span class="psw register_btn clear__hash"><a class="clear__hash" href="#">register?</a></span>
