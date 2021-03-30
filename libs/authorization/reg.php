@@ -1,4 +1,5 @@
 <?php
+  session_start();
   if (isset($_POST['login'])) { $login = $_POST['login']; } 
   if (isset($_POST['password'])) { $password=$_POST['password']; }
   if (isset($_POST['email'])) { $email=$_POST['email']; }
@@ -31,6 +32,7 @@
 
   if ($result2=='TRUE')
   {
+    $_SESSION['login']=$login;
     header('Location: /CrashGameSite/');
   } else {
     header('Location: /CrashGameSite/');
