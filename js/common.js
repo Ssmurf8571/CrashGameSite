@@ -5,7 +5,18 @@ $(window).on('load', function() {
 	$(".loader").delay(400).fadeOut("slow");
 });
 
-//Chat 8:37
+//Header 9:17
+$( ".app__nav__language__current" ).click(function() {
+    var dropdown_btn_lang = document.getElementById('app__nav__language__dropdown');
+    dropdown_btn_lang.classList.toggle("active");
+});
+
+$( ".app__nav__page__nightmode" ).click(function() {
+var body_dark__mode = document.body;
+body_dark__mode.classList.toggle("dark-mode");
+});
+  
+//Chat 20:49
 $(document).ready(function(){  
           
 	$('#submit-msg').click(function() {
@@ -37,18 +48,19 @@ $(document).ready(function(){
 	  
 });
 
+// Scroll Chat and Clear Hash 51:66 
 $(document).ready(function(){
 
 	//Scroll Chat
 	setInterval(() => {
 		$('#chatwindow').animate({
 		scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);
-	  }, 1000);
+	}, 1000);
 
-	  //Clear Hash
-	  $('.clear__hash').click(function(e){
+	//Clear Hash
+	$('.clear__hash').click(function(e){
 		window.location.hash = '';
 		history.pushState('', document.title, window.location.pathname);
 		e.preventDefault();
-	  });
+	});
 });
