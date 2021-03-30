@@ -1,5 +1,5 @@
 <?php
-    include('../libs/authorization/db.php');
+    include('db.php');
 
     $result = mysqli_query($db,"SELECT user, date, message FROM message");
 

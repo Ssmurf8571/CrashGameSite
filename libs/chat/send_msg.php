@@ -1,5 +1,5 @@
 <?php
-    include('../libs/authorization/db.php');
+    include('../authorization/db.php');
 
     date_default_timezone_set('ALL');
 
