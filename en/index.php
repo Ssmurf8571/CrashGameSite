@@ -69,7 +69,7 @@
             if(isset($_SESSION['login'])) 
             { 
               echo '<li class="nav-item pers__area">
-                <a id="login__btn" href="./../php/checkProfile.php">'.$_SESSION['login'].'</a>
+                <a id="login__btn" href="../libs/authorization/logout.php">'.$_SESSION['login'].'</a>
               </li>'; 
             } else { 
               echo '<div class="nav-item">
@@ -85,77 +85,22 @@
   <div class="main__wrapper">
     <div class="left__sidebar">
       <div class="login__form">
-        <div id="id01" class="modal">     
-          <form class="modal-content animate" action="/CrashGameSite/libs/authorization/login.php" method="post">
-            <div class="imgcontainer">
-              <span class="close" id="close" title="Close Modal">&times;</span>
-            </div>
-        
-            <div class="container_auth">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" name="login" placeholder="Enter Username" name="uname" required>
-        
-              <label for="psw"><b>Password</b></label>
-              <input type="password" name="password" placeholder="Enter Password" name="psw" required>
-                
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
-        
-            <div class="container_auth">
-              <button type="button" id="close" class="cancelbtn" >Cancel</button>
-              <button type="submit">Login</button>
-              <span class="psw register_btn clear__hash"><a class="clear__hash" href="#">register?</a></span>
-              <span class="psw clear__hash">Forgot <a class="clear__hash" href="#">password?</a></span>
-            </div>
-          </form>
-        </div>
+        <?php
+          include('../login.html');
+        ?>
       </div>
 
       <div class="register_form">
-
-        <div id="id02" class="modal">
-          <span class="close" title="Close Modal">&times;</span>
-          <form id="form_register" class="modal-content animate" action="/CrashGameSite/php/reg.php" method="post">
-            <div class="imgcontainer">
-              <span class="close" id="close" title="Close Modal">&times;</span>
-            </div>
-            <div class="container_auth">
-              <label for="login"><b>Username</b></label>
-              <input name="login" type="text" placeholder="Enter Username" required>
-
-              <label for="email"><b>Email</b></label>
-              <input name="email" type="email" placeholder="Enter Email" required>
-
-              <label for="psw"><b>Password</b></label>
-              <input name="password" type="password" class="reg_form__password" id="form__password" placeholder="Enter Password" required>
-
-              <label for="psw-repeat"><b>Repeat Password</b></label>
-              <input name="psw-repeat" type="password" class="reg_form__password" id="form_re__password" placeholder="Repeat Password" required>
-              
-              <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-              </label>
-
-              <p>By creating an account you agree to our <a class="clear__hash" href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>       
-
-              <div id="error__message"></div>
-
-              <div class="clearfix">
-                <button type="button" class="cancelbtn" id="close">Cancel</button>
-                <button type="submit" name="submit" class="signupbtn submit">Sign Up</button>
-              </div>
-            </div>
-          </form>
-        </div>
+        <?php
+          include('../register.html');
+        ?>
       </div>
     </div>
     <div class="right__sidebar">
       <form id="content" action="" method="POST">
         <div id="chatwindow">
           <?php
-            require('chat.php');
+            require('../libs/chat/post_msg.php');
           ?>
         </div>
         <br>
@@ -179,48 +124,6 @@
       
       <script src="../js/common.js"></script>
       <script src="../js/autorization.js"></script>
-
-      <!--<script type="text/javascript">
-        /* most simple ajax chat script (www.linuxuser.at) (GPLv2) */
-        var nick_maxlength=4;
-        var http_request=false;
-        var http_request2=false;
-        var intUpdate;
-
-        /* http_request for writing */
-        function ajax_request(url){http_request=false;if(window.XMLHttpRequest){http_request=new XMLHttpRequest();if(http_request.overrideMimeType){http_request.overrideMimeType('text/xml');}}else if(window.ActiveXObject){try{http_request=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{http_request=new ActiveXObject("Microsoft.XMLHTTP");}catch(e){}}}
-        http_request.onreadystatechange=alertContents;http_request.open('GET',url,true);http_request.send(null);}
-        function alertContents(){if(http_request.readyState==4){if(http_request.status==200){rec_response(http_request.responseText);}else{}}}
-
-        /* http_request for reading */
-        function ajax_request2(url){http_request2=false;if(window.XMLHttpRequest){http_request2=new XMLHttpRequest();if(http_request2.overrideMimeType){http_request2.overrideMimeType('text/xml');}}else if(window.ActiveXObject){try{http_request2=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{http_request2=new ActiveXObject("Microsoft.XMLHTTP");}catch(e){}}}
-        http_request2.onreadystatechange=alertContents2;http_request2.open('GET',url,true);http_request2.send(null);}
-        function alertContents2(){if(http_request2.readyState==4){if(http_request2.status==200){rec_chatcontent(http_request2.responseText);}else{}}}
-
-        /* chat stuff */
-        chatmsg.focus()
-        var show_newmsg_on_bottom=1;     /* set to 0 to let new msg´s appear on top */
-        var waittime=100;        /* time between chat refreshes (ms) */
-
-        intUpdate=window.setTimeout("read_cont();", waittime);
-        chatwindow.value = "loading...";
-
-        function read_cont()         { zeit = new Date(); ms = (zeit.getHours() * 24 * 60 * 1000) + (zeit.getMinutes() * 60 * 1000) + (zeit.getSeconds() * 1000) + zeit.getMilliseconds(); ajax_request2("chat.txt?x=" + ms); }
-        function display_msg(msg1)     { chatwindow.value = msg1.trim(); }
-        function keyup(arg1)         { if (arg1 == 13) submit_msg(); }
-        function submit_msg()         { clearTimeout(intUpdate); if (chatnick.value == "") { check = prompt("please enter username:"); if (check === null) return 0; if (check == "") check="..."; chatnick.value=check; } if (chatnick.value.length > nick_maxlength) chatnick.value=chatnick.value.substring(0,nick_maxlength); spaces=""; for(i=0;i<(nick_maxlength-chatnick.value.length);i++) spaces+=" "; v=chatwindow.value.substring(chatwindow.value.indexOf("\n")) + "\n" + chatnick.value + spaces + " " + chatmsg.value; if (chatmsg.value != "") chatwindow.value=v.substring(1); write_msg(chatmsg.value,chatnick.value); chatmsg.value=""; intUpdate=window.setTimeout("read_cont();", waittime);}
-        function write_msg(msg1,nick1)     { ajax_request("test.php?msg=" + escape(msg1) + "&user=" + escape(nick1)); }
-        function rec_response(str1)     { }
-
-        function rec_chatcontent(cont1) {
-            if (cont1 != "") {
-                out1 = unescape(cont1);
-                if (show_newmsg_on_bottom == 0) { out1 = ""; while (cont1.indexOf("\n") > -1) { out1 = cont1.substr(0, cont1.indexOf("\n")) + "\n" + out1; cont1 = cont1.substr(cont1.indexOf("\n") + 1); out1 = unescape(out1); } }
-                if (chatwindow.value != out1) { display_msg(out1); }
-                intUpdate=window.setTimeout("read_cont()", waittime);
-            }
-        }
-      </script>-->
   </div>
 
 </body>

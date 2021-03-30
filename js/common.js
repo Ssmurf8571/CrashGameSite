@@ -25,18 +25,18 @@ $(document).ready(function(){
 		var data = $(this).parents('form').serialize()
 
 		$.ajax({
-				url : "send_msg.php",
+				url : "../libs/chat/send_msg.php",
 				type : "POST",
 				data : {
 				login : login,
 				msg : msg
 				},
 				success : function(data) {
+					document.getElementById('chatmsg').value='';
 					$.ajax({
-						url : "chat.php",
+						url : "../libs/chat/post_msg.php",
 						type: "GET",
 						success : function(data) {
-							document.getElementById('chatmsg').value='';
 							$('#chatwindow').html(data);
 						}
 					});
