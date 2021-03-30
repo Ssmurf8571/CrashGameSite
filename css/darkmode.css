@@ -45,3 +45,28 @@
 .dark-mode .right__sidebar #chatmsg::placeholder {
   color: #474747;
 }
+
+.dark-mode .container_auth > input[type=text], .dark-mode .container_auth > input[type=email], .dark-mode .container_auth > input[type=password] {
+  background: #ebebeb;
+  color: #000;
+}
+
+.dark-mode .container_auth > input::placeholder {
+  color: #000;
+}
+
+.dark-mode .modal-content {
+  background-color: #ebebeb;
+}
+
+.dark-mode .imgcontainer > .close {
+  color: #000;
+}
+
+.dark-mode .modal label, .dark-mode .modal .container_auth span, .dark-mode .modal .container_auth span > a, .dark-mode .container_auth > p {
+  color: #000;
+}
+
+.dark-mode #id01 > form > div:nth-child(3) {
+  background-color:#ebebeb;
+}
