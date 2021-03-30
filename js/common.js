@@ -1,9 +1,11 @@
+//Load Page 2:6
 $(window).on('load', function() {
 
 	$(".loader_inner").fadeOut();
 	$(".loader").delay(400).fadeOut("slow");
 });
 
+//Chat 8:37
 $(document).ready(function(){  
           
 	$('#submit-msg').click(function() {
@@ -35,53 +37,18 @@ $(document).ready(function(){
 	  
 });
 
-$( ".app__nav__language__current" ).click(function() {
-  var dropdown_btn_lang = document.getElementById('app__nav__language__dropdown');
-  dropdown_btn_lang.classList.toggle("active");
-});
+$(document).ready(function(){
 
-$( ".app__nav__page__nightmode" ).click(function() {
-  var body_dark__mode = document.body;
-  body_dark__mode.classList.toggle("dark-mode");
-});
+	//Scroll Chat
+	setInterval(() => {
+		$('#chatwindow').animate({
+		scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);
+	  }, 1000);
 
-$( "#login_btn" ).click(function() {
-
-	document.getElementById("id01").style.display = "block";
-
-
-	var modal = document.getElementById('id01');
-
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
-});
-
-$( ".close" ).click(function() {
-
-	document.getElementById("id01").style.display = "none";
-	document.getElementById("id02").style.display = "none";
-
-});
-
-$(".cancelbtn").click(function() {
-    document.getElementById("id01").style.display = "none";
-	document.getElementById("id02").style.display = "none";
-});
-
-$( ".register_btn" ).click(function() {
-
-	document.getElementById("id01").style.display = "none";
-	document.getElementById("id02").style.display = "block";
-
-
-	  var modal = document.getElementById('id02');
-  
-	  window.onclick = function(event) {
-		  if (event.target == modal) {
-			  modal.style.display = "none";
-		  }
-	  }
+	  //Clear Hash
+	  $('.clear__hash').click(function(e){
+		window.location.hash = '';
+		history.pushState('', document.title, window.location.pathname);
+		e.preventDefault();
+	  });
 });

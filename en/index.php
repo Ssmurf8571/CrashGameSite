@@ -178,21 +178,7 @@
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
       
       <script src="../js/common.js"></script>
-
-      <script>
-        $('.clear__hash').click(function(e){
-          window.location.hash = '';
-          history.pushState('', document.title, window.location.pathname);
-          e.preventDefault();
-        });
-      </script>
-
-      <script>
-        setInterval(() => {
-          $('#chatwindow').animate({
-          scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);
-        }, 1000);
-      </script>
+      <script src="../js/autorization.js"></script>
 
       <!--<script type="text/javascript">
         /* most simple ajax chat script (www.linuxuser.at) (GPLv2) */
