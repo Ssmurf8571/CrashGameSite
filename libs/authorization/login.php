@@ -17,8 +17,9 @@
   $myrow = mysqli_fetch_array($result);
 
   if ($myrow['password']==$password) {
-    $_SESSION['login']=$myrow['login']; 
+    $_SESSION['login']=$myrow['login'];
     $_SESSION['id']=$myrow['id'];
+    $_SESSION['balance']=$myrow['balance'];
     header('Location: /CrashGameSite/');
   }
   else {
