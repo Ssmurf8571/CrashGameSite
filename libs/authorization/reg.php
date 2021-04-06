@@ -28,7 +28,7 @@
     exit ("<center><h1>Извините, введённый вами логин уже зарегистрирован. Введите другой логин.</h1></center>");
   }
 
-  $result2 = mysqli_query ($db, "INSERT INTO users (login,password,email) VALUES('$login','$password','$email')");
+  $result2 = mysqli_query ($db, "INSERT INTO users (login,password,email,balance) VALUES('$login','$password','$email','0')");
 
   if ($result2=='TRUE')
   {
