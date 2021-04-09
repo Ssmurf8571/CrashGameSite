@@ -7,11 +7,11 @@ body input:required:valid, body textarea:required:valid {}
 html.js .loader {background: none repeat scroll 0 0 #ffffff;bottom: 0;height: 100%;left: 0;position: fixed;right: 0;top: 0;width: 100%;z-index: 9999;}
 html.js .loader_inner {background-image: url("../img/preloader.gif");background-size: cover;background-repeat: no-repeat;background-position: center center;background-color: #fff;height: 60px;width: 60px;margin-top: -30px;margin-left: -30px;left: 50%;top: 50%;position: absolute;}
 body {
-	font-family: sans-serif;
 	min-width: 320px;
 	position: relative;
 	line-height: 1.6;
 	font-family: 'Montserrat', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	overflow-x: hidden;
 	background-color: #2A2D33;
 }
@@ -38,3 +38,17 @@ p {font-size: 12px;}
 	justify-content: space-between;
 }
 
+.main__wrapper .left__sidebar {
+	position: relative;
+	width: 100%;
+}
+
+.user-balance {
+	margin: 0 0 0 15px;
+	padding: 6px 15px;
+    background-color: #1f2424;
+    border: 1px solid #242635;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+}
