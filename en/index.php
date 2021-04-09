@@ -1,5 +1,12 @@
 <?php
   session_start(); 
+
+  $db = @new mysqli("localhost","root","root","db_piroll");
+  $result = mysqli_query($db,"SELECT balance FROM users WHERE `login`= ".$_SESSION['login']."");
+
+  while ($row = $result->fetch_assoc()) {
+      $balance = $row['balance'];
+  }
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +39,8 @@
 	<link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/darkmode.css">
 	<link rel="stylesheet" href="../css/media.css">
+
+  <link rel="stylesheet" href="../libs/games/dice/style.css">
 
 	<script src="../libs/modernizr/modernizr.js"></script>
 
@@ -69,7 +78,8 @@
             if(isset($_SESSION['login'])) 
             { 
               echo '<li class="nav-item pers__area">
-                <a id="login__btn" href="../libs/authorization/logout.php">'.$_SESSION['login'].'</a>
+                <a id="login__btn" href="../libs/authorization/logout.php">'.$_SESSION['login'].'</a></li>';
+                echo '<li class="nav-item"><div class="user-balance">'.$balance.'</div>
               </li>'; 
             } else { 
               echo '<div class="nav-item">
@@ -84,12 +94,16 @@
 
   <div class="main__wrapper">
     <div class="left__sidebar">
+
+      <?php
+        include('../libs/games/dice/index.html');
+      ?>
+
       <div class="login__form">
         <?php
           include('../login.html');
         ?>
       </div>
-
       <div class="register_form">
         <?php
           include('../register.html');

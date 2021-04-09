@@ -1,0 +1,72 @@
+<style>
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    #total > span, #percent > span {
+        cursor: pointer;
+    }
+</style>
+
+<section class="block__game">
+    <div class="game__page__wrapper">
+        <form action="" method="POST" id="GetFormGame">
+            <div class="user__panel__game">
+                <div class="input__block">
+                    <label id="total" for="total">
+                        <h3>Сумма</h3>
+                        <input id="prise_input" type="number" value="1" step="0.01" name="total" required>
+                        <div class="arithBtn">
+                            <div class="col-md md-1">
+                                <span class="min_price">Min</span>
+                                <span class="max_price">Max</span>
+                            </div>
+                     
+                            <div class="col-md md2-2">
+                                <span class="double_price">Double</span>
+                                <span class="half_price">Half</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div class="input__block">
+                    <label id="percent" for="percent">
+                        <h3>Процент</h3>
+                        <input id="percent_input" type="number" value="90" step="0.01" name="percent" required>
+                        <div class="arithBtn">
+                            <div class="col-md md-1">
+                                <span class="min_percent">Min</span>
+                                <span class="max_percent">Max</span>
+                            </div>
+                            
+                            <div class="col-md md-2">
+                                <span class="double_percent">Double</span>
+                                <span class="half_percent">Half</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="bet__profit">
+                <div id="bet__profit"></div>
+                <p style="margin: 0 0 5px;">Possible winnings</p>
+            </div>
+            
+            <div class="UserButtonGame">
+                <label for="Min">
+                    <div id="MinPercent"></div>
+                    <input id="betMin_submit" class="betSubmitDice" type="submit" name="Min" value="Меньше">
+                </label>
+                <label for="Max">
+                    <div id="MaxPercent"></div>
+                    <input id="betMax_submit" class="betSubmitDice" type="submit" name="Max" value="Больше">
+                </label>
+            </div>
+            <div class="betCheckProfit"></div>
+        </form>
+    </div>
+</section>
+
+<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../libs/games/dice/main.js"></script>
