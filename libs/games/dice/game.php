@@ -14,7 +14,7 @@ session_start();
     $buttonId = $_POST['buttonId'];
 
     if ($balance < $total) {
-        exit('Недостаточно средств');
+        exit('<h4 style="background: red; display: inline-block;">Недостаточно средств</h4>');
     }
 
 
