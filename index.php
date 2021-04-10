@@ -1,5 +1,5 @@
 <?php
 
-header('Location: /CrashGameSite/en/');
+header('Location: en/');
 
 ?>

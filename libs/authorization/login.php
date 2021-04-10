@@ -20,9 +20,9 @@
     $_SESSION['login']=$myrow['login'];
     $_SESSION['id']=$myrow['id'];
     $_SESSION['balance']=$myrow['balance'];
-    header('Location: /CrashGameSite/');
+    header('Location: ../../');
   }
   else {
-    header('Location: /CrashGameSite/');
+    header('Location: ../../');
   }
 ?>

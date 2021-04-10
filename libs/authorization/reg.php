@@ -6,7 +6,7 @@
   if (isset($_POST['psw-repeat'])) { $psw_repeat=$_POST['psw-repeat']; }
 
   if ($password != $psw_repeat) {
-    header('Location: /CrashGameSite/');
+    header('Location: ../../');
   }
 
   $login = stripslashes($login);
@@ -33,8 +33,8 @@
   if ($result2=='TRUE')
   {
     $_SESSION['login']=$login;
-    header('Location: /CrashGameSite/');
+    header('Location: ../../');
   } else {
-    header('Location: /CrashGameSite/');
+    header('Location: ../../');
   }
 ?>

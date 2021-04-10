@@ -1,12 +1,5 @@
 <?php
   session_start(); 
-
-  $db = @new mysqli("localhost","root","root","db_piroll");
-  $result = mysqli_query($db,"SELECT balance FROM users WHERE `login`= ".$_SESSION['login']."");
-
-  while ($row = $result->fetch_assoc()) {
-      $balance = $row['balance'];
-  }
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +59,7 @@
             </div>
             <div class="app__nav__language__dropdown" id="app__nav__language__dropdown">
               <a class="app__nav__language" href="../en/">English</a>
-              <a class="app__nav__language" href="../ru/">Русский</a>
+              <a class="app__nav__language" href="#">Русский</a>
             </div>
           </div>
           <div class="app__nav__page__nightmode">
@@ -77,6 +70,12 @@
           <?php
             if(isset($_SESSION['login'])) 
             { 
+              $db = @new mysqli("localhost","root","root","db_piroll");
+              $result = mysqli_query($db,"SELECT balance FROM users WHERE `login`= ".$_SESSION['login']."");
+
+              while ($row = $result->fetch_assoc()) {
+                  $balance = $row['balance'];
+              }
               echo '<li class="nav-item pers__area">
                 <a id="login__btn" href="../libs/authorization/logout.php">'.$_SESSION['login'].'</a></li>';
                 echo '<li class="nav-item"><div class="user-balance">'.$balance.'</div>
