@@ -33,38 +33,37 @@ session_start();
     if($buttonId == 'Меньше')
     {
         if (in_array($randomNumber, $rangeFromPercent)) {
-            echo '<h4 style="background: #2BDE6D; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
-            $newBalance = $balance + (round(($total * 100 / $percent),2)) - $total;
-
-            echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
-
-            $result =  mysqli_query($db, 'UPDATE users SET balance= "'.$newBalance.'" WHERE login= "'.$login.'"');
+            WinGame($randomNumber,$balance,$total,$percent,$db,$login);
         } 
         else {
-            echo '<h4 style="background: red; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
-            $newBalance = ($_SESSION['balance'] - $total);
-            $newBalance = $balance + $newBalance;
-            echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
-            $result =  mysqli_query($db, 'UPDATE `users` SET `balance`= "'.$newBalance.'" WHERE `login`= "'.$login.'"');
+            LoseGame($randomNumber,$balance,$total,$db,$login);
         }
     }
 
     if($buttonId == 'Больше')
     {
         if (in_array($randomNumber, $rangeToPercent)) {
-            echo '<h4 style="background: #2BDE6D; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
-            $newBalance = $balance + (round(($total * 100 / $percent),2)) - $total;
-
-            echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
-
-            $result =  mysqli_query($db, 'UPDATE `users` SET `balance`= "'.$newBalance.'" WHERE `login`= "'.$login.'"');
+            WinGame($randomNumber,$balance,$total,$percent,$db,$login);
         } else {
-            echo '<h4 style="background: red; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
-            $newBalance = ($_SESSION['balance'] - $total);
-            $newBalance = $balance + $newBalance;
-            echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
-            $result =  mysqli_query($db, 'UPDATE `users` SET `balance`= "'.$newBalance.'" WHERE `login`= "'.$login.'"');
+            LoseGame($randomNumber,$balance,$total,$db,$login);
 
         }
+    }
+
+    function WinGame($randomNumber,$balance,$total,$percent,$db,$login) {
+        echo '<h4 style="background: #2BDE6D; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
+        $newBalance = $balance + (round(($total * 100 / $percent),2)) - $total;
+
+        echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
+
+        $result =  mysqli_query($db, 'UPDATE `users` SET `balance`= "'.$newBalance.'" WHERE `login`= "'.$login.'"');
+    }
+
+    function LoseGame($randomNumber,$balance,$total,$db,$login) {
+        echo '<h4 style="background: red; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
+        $newBalance = ($balance - $total);
+
+        echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
+        $result =  mysqli_query($db, 'UPDATE `users` SET `balance`= "'.$newBalance.'" WHERE `login`= "'.$login.'"');
     }
 ?>
