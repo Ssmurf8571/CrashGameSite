@@ -2,21 +2,24 @@
 session_start();
     $db = @new mysqli("localhost","root","root","db_piroll");
 
-    $result = mysqli_query($db,"SELECT balance FROM users WHERE `login`= ".$_SESSION['login']);
-
-    while ($row = $result->fetch_assoc()) {
-        $balance = $row['balance'];
-    }
-
     $login = $_SESSION['login'];
     $total = $_POST['total'];
     $percent = $_POST['percent'];
     $buttonId = $_POST['buttonId'];
 
+    $result = mysqli_query($db,"SELECT balance FROM users WHERE login = ".$_SESSION['login']);
+
+    if ($login == '') {
+        exit('<h4 style="background: red; display: inline-block;">Вы не авторизовались</h4>');
+    }
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $balance = $row['balance'];
+    }
+
     if ($balance < $total) {
         exit('<h4 style="background: red; display: inline-block;">Недостаточно средств</h4>');
     }
-
 
     $fromPercent = $percent * 9999;
     $toPercent = 999999 - $fromPercent;

@@ -64,3 +64,15 @@ $(document).ready(function(){
 		e.preventDefault();
 	});
 });
+
+$('.user-balance').click(function() {
+	document.getElementById('promo__box').style.display = "block";
+
+	var promoBox = document.getElementById('promo__box');
+
+    window.onclick = function(event) {
+        if (event.target == promoBox) {
+            promoBox.style.display = "none";
+        }
+    }
+});

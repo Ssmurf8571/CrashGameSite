@@ -7,6 +7,9 @@
     $msg = $_POST['msg'];
     $data = date('G:i');
 
-    $result = mysqli_query($db, "INSERT INTO message (user,message,date) VALUES('$user','$msg','$data')");
+    if($user == "") {
+        exit();
+    }
 
+    $result = mysqli_query($db, "INSERT INTO message (user,message,date) VALUES('$user','$msg','$data')");
 ?>

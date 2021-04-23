@@ -15,16 +15,16 @@ $( "#login_btn" ).click(function() {
 
 //X-Close Button
 $( ".close" ).click(function() {
-
-    document.getElementById("id01").style.display = "none";
-    document.getElementById("id02").style.display = "none";
-
+    document.querySelectorAll('.modal').forEach(function(el) {
+        el.style.display = 'none';
+    });
 });
 
 //Cansel-Button
 $(".cancelbtn").click(function() {
-    document.getElementById("id01").style.display = "none";
-    document.getElementById("id02").style.display = "none";
+    document.querySelectorAll('.modal').forEach(function(el) {
+        el.style.display = 'none';
+    });
 });
 
 //Click Register Button
