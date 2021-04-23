@@ -69,13 +69,15 @@
           </div>
           <?php
             if(isset($_SESSION['login'])) 
-            { 
+            {
               $db = @new mysqli("localhost","root","root","db_piroll");
-              $result = mysqli_query($db,"SELECT balance FROM users WHERE `login`= ".$_SESSION['login']."");
+              $result = mysqli_query($db,"SELECT balance FROM users WHERE login = ".$_SESSION['login']);
 
               while ($row = $result->fetch_assoc()) {
-                  $balance = $row['balance'];
+              //while ($row = mysqli_fetch_assoc($result)) {
+                $balance = $row['balance'];
               }
+              
               echo '<li class="nav-item pers__area">
                 <a id="login__btn" href="../libs/authorization/logout.php">'.$_SESSION['login'].'</a></li>';
                 echo '<li class="nav-item"><div class="user-balance">'.$balance.'</div>
@@ -108,6 +110,11 @@
           include('../register.html');
         ?>
       </div>
+      <div class="promo_box">
+        <?php
+          include('../libs/promo/promo.html');
+        ?>
+      </div>
     </div>
     <div class="right__sidebar">
       <form id="content" action="" method="POST">
@@ -122,7 +129,7 @@
         ?>
         <input id="chatmsg" type="text" name="msg" placeholder="message" autocomplete="off">
         <button id="submit-msg" type="submit"></button>
-      </div>
+      </form>
     </div>
   </div>
 
@@ -137,6 +144,7 @@
       
       <script src="../js/common.js"></script>
       <script src="../js/autorization.js"></script>
+      <script src="../libs/promo/promo.js"></script>
   </div>
 
 </body>
