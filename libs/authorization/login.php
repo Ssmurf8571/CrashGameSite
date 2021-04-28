@@ -20,6 +20,7 @@
     $_SESSION['login']=$myrow['login'];
     $_SESSION['id']=$myrow['id'];
     $_SESSION['balance']=$myrow['balance'];
+    $_SESSION['role']=$myrow['role'];
     header('Location: ../../');
   }
   else {
