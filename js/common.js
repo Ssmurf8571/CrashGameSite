@@ -22,7 +22,6 @@ $(document).ready(function(){
 	$('#submit-msg').click(function() {
 		var login = $(this).parent().find('input[name="login"]').val();
 		var msg = $(this).parent().find('input[name="msg"]').val();
-		var data = $(this).parents('form').serialize()
 
 		$.ajax({
 				url : "../libs/chat/send_msg.php",
