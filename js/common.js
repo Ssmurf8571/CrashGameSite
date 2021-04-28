@@ -76,3 +76,9 @@ $('.user-balance').click(function() {
         }
     }
 });
+
+$('#hideChat').click(function() {
+	$('#hideChat').toggleClass('open__chat close__chat');
+
+	$('#content').animate({width: "toggle"}, 300, function(){});
+});

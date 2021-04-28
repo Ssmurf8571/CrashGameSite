@@ -59,7 +59,7 @@
             </div>
             <div class="app__nav__language__dropdown" id="app__nav__language__dropdown">
               <a class="app__nav__language" href="../en/">English</a>
-              <a class="app__nav__language" href="#">Русский</a>
+              <a class="app__nav__language clear__hash" href="#">Русский</a>
             </div>
           </div>
           <div class="app__nav__page__nightmode">
@@ -95,10 +95,13 @@
 
   <div class="main__wrapper">
     <div class="left__sidebar">
-
-      <?php
-        include('../libs/games/dice/index.html');
-      ?>
+      <div class="game__block">
+        <div class="gameItem">
+          <?php
+            include('../libs/games/dice/index.html');
+          ?>
+        </div>
+      </div>
 
       <div class="login__form">
         <?php
@@ -130,6 +133,7 @@
         <input id="chatmsg" type="text" name="msg" placeholder="message" autocomplete="off">
         <button id="submit-msg" type="submit"></button>
       </form>
+      <button id="hideChat" class="open__chat"></button>
     </div>
   </div>
 
@@ -144,7 +148,6 @@
       
       <script src="../js/common.js"></script>
       <script src="../js/autorization.js"></script>
-      <script src="../libs/promo/promo.js"></script>
   </div>
 
 </body>
