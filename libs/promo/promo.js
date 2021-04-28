@@ -3,13 +3,14 @@ $('#PromoBoxBlock').submit((e)=> {
     var UserPromo = $('input[name="promo"]').val();
 
     $.ajax({
-        URL : "../libs/promo/promo.php",
+        url : "../libs/promo/promo.php",
         type : "POST",
         data : {
-            UserPromo : UserPromo
+            UserPromo : UserPromo,
         },
         success: function(data) {
-            $('#MessageBoxPromo').html(data);
+            $('#newBalancePromo').html(data);
+            location.reload();
         }
     });
 });
