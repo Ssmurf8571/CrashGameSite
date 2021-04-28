@@ -45,7 +45,7 @@
 }
 
 #GetFormGame > .UserButtonGame > label {
-    margin: 0 30px;
+    margin: 15px 30px 0;
 }
 
 .UserButtonGame input[type="submit"] {

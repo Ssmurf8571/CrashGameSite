@@ -10,7 +10,7 @@ session_start();
     $result = mysqli_query($db,"SELECT balance FROM users WHERE login = ".$_SESSION['login']);
 
     if ($login == '') {
-        exit('<h4 style="background: red; display: inline-block;">Вы не авторизовались</h4>');
+        exit('<h4 style="background: red; display: inline-block; color: #fff;">Вы не авторизовались</h4>');
     }
 
     while ($row = mysqli_fetch_assoc($result)) {
@@ -18,7 +18,7 @@ session_start();
     }
 
     if ($balance < $total) {
-        exit('<h4 style="background: red; display: inline-block;">Недостаточно средств</h4>');
+        exit('<h4 style="background: red; display: inline-block; color: #fff;">Недостаточно средств</h4>');
     }
 
     $fromPercent = $percent * 9999;
@@ -54,7 +54,7 @@ session_start();
     }
 
     function WinGame($randomNumber,$balance,$total,$percent,$db,$login) {
-        echo '<h4 style="background: #2BDE6D; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
+        echo '<h4 style="background: #2BDE6D; display: inline-block; color: #fff;">Выпало: '.$randomNumber.'</h4>';
         $newBalance = $balance + (round(($total * 100 / $percent),2)) - $total;
 
         echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
@@ -63,7 +63,7 @@ session_start();
     }
 
     function LoseGame($randomNumber,$balance,$total,$db,$login) {
-        echo '<h4 style="background: red; display: inline-block;">Выпало: '.$randomNumber.'</h4>';
+        echo '<h4 style="background: red; display: inline-block; color: #fff;">Выпало: '.$randomNumber.'</h4>';
         $newBalance = ($balance - $total);
 
         echo '<div id="BetBalance" style="display: none;">'.$newBalance.'</div>';
