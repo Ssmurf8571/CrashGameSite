@@ -83,3 +83,7 @@
   border: 1px solid #969696;
   color: #000;
 }
+
+.dark-mode .input__block > label > input {
+  color: #000;
+}
