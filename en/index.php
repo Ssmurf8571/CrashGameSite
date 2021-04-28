@@ -71,10 +71,9 @@
             if(isset($_SESSION['login'])) 
             {
               $db = @new mysqli("localhost","root","root","db_piroll");
-              $result = mysqli_query($db,"SELECT balance FROM users WHERE login = ".$_SESSION['login']);
+              $result = mysqli_query($db,"SELECT balance FROM users WHERE login = '".$_SESSION['login']."'");
 
-              while ($row = $result->fetch_assoc()) {
-              //while ($row = mysqli_fetch_assoc($result)) {
+              while ($row = mysqli_fetch_assoc($result)) {
                 $balance = $row['balance'];
               }
               
