@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 01 2021 г., 22:26
+-- Время создания: Апр 28 2021 г., 21:23
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.1.33
 
@@ -39,20 +39,29 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`id`, `user`, `message`, `date`) VALUES
-(1, '3', '14', '22:56'),
-(2, '3', '22', '22:57'),
-(3, '3', '22', '22:58'),
-(4, '3', 'sdf', '23:01'),
-(5, '3', 'sgftr', '23:01'),
-(6, '3', 'asf', '23:02'),
-(7, '3', 'hgfth', '23:02'),
-(8, '3', '13', '23:10'),
-(9, '3', 'ау', '23:10'),
-(10, '3', '15', '15:24'),
-(11, '3', '17', '15:24'),
-(12, '3', '25', '15:35'),
-(13, '1', '11', '15:37'),
-(14, '1', '28', '15:38');
+(1, 'admin', 'Hello user!', '-00:01');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `promolist`
+--
+
+CREATE TABLE `promolist` (
+  `id` int NOT NULL,
+  `name` char(20) NOT NULL,
+  `money` float DEFAULT NULL,
+  `activates` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `promolist`
+--
+
+INSERT INTO `promolist` (`id`, `name`, `money`, `activates`) VALUES
+(1, 'test', 6, 27),
+(3, '123', 50, NULL),
+(4, 'forAdmin', 100, NULL);
 
 -- --------------------------------------------------------
 
@@ -64,20 +73,26 @@ CREATE TABLE `users` (
   `id` int NOT NULL,
   `login` varchar(15) NOT NULL,
   `password` varchar(15) NOT NULL,
-  `email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `balance` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `email` varchar(30) NOT NULL,
+  `balance` float DEFAULT NULL,
+  `role` int NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`, `email`, `balance`) VALUES
-(1, 'admin', 'root', '', 10000000),
-(2, '1', '1', '1@1.1', 1000),
-(3, '2', '2', '2@2.2', 100),
-(4, '3', '3', '3@3.3', 10),
-(5, '4', '4', '4@4.4', 0);
+INSERT INTO `users` (`id`, `login`, `password`, `email`, `balance`, `role`) VALUES
+(1, '468468406', '1', '1', 0, 1),
+(2, 'admin', 'root', '', 0, 6),
+(3, '1', '1', '1@1.1', 2200, 5),
+(4, '2', '2', '2@2.2', 100, 1),
+(5, '3', '3', '3@3.3', 50, 1),
+(6, '4', '4', '4@4.4', 10, 1),
+(7, '5', '5', '5@5.5', 1, 1),
+(8, '6', '6', '6@6.6', 0, 1),
+(9, '7', '7', '7@7.7', 0, 1),
+(11, 'testUser', 'testUser', 'testUser@mail.ru', 162.34, 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -87,6 +102,12 @@ INSERT INTO `users` (`id`, `login`, `password`, `email`, `balance`) VALUES
 -- Индексы таблицы `message`
 --
 ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `promolist`
+--
+ALTER TABLE `promolist`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -103,13 +124,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `promolist`
+--
+ALTER TABLE `promolist`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
