@@ -38,6 +38,23 @@
 	header .app__logo h3 > span:nth-child(1) {
 		display: none;
 	}
+
+	.right__sidebar #chatwindow {
+		height: calc(100vh - 137px); 
+	}
+
+	.right__sidebar {
+		position: absolute;
+		right: 0;
+	}
+
+	#hideChat.open__chat {
+		top: calc(100% - 74px);
+	}
+
+	#hideChat.close__chat {
+		top: calc(100vh - 235px);
+	}
 }
 
 /* Extra Small Devices, Phones */
@@ -45,12 +62,38 @@
 	header .app__logo h3 > span:nth-child(2) {
 		display: none;
 	}
+
+	.right__sidebar #chatwindow {
+		height: calc(100vh - 75px); 
+	}
+
+	#hideChat.close__chat {
+		top: calc(100vh - 100px);
+	}
+}
+
+@media only screen and (max-width : 406px) {
+	.right__sidebar #chatwindow {
+		height: 100vh;
+	}
+
+	#hideChat.close__chat {
+		top: calc(100vh - 20px);
+	}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 350px) {
 	.app__nav__menu > .app__nav__page__nightmode {
 		margin: 0 auto;
+	}
+
+	.user-balance {
+		margin: 0 auto;
+	}
+
+	.right__sidebar #chatwindow {
+		width: 290px;
 	}
 }
 
