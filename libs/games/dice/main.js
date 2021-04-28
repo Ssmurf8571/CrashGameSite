@@ -44,9 +44,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-    document.getElementById('percent_input').addEventListener('input', funcCheckPerCent);
-
-    function funcCheckPerCent() {
+    document.getElementById('percent_input').addEventListener('input', function() {
         var percentValue = parseFloat($('#percent_input').val());
         if (percentValue >= 95) {
             $('#percent_input').val('95');
@@ -55,16 +53,12 @@ $(document).ready(function() {
             $('#percent_input').val('1');
             percentValue = 1;
         }
-    }
+    });
 });
 
 
 
-document.getElementById('prise_input').addEventListener('input', funcCheckPrise);
-
-
-function funcCheckPrise() {
-
+document.getElementById('prise_input').addEventListener('input', function() {
     var MaxBalance = parseFloat(document.getElementsByClassName("user-balance")[0].innerHTML);
     var priseValue = parseFloat($('#prise_input').val());
 
@@ -75,8 +69,7 @@ function funcCheckPrise() {
     } else {
         return false;
     }
-}
-
+});
 
 
 $(document).ready(function() {
@@ -138,7 +131,6 @@ function funcBetPrice() {
     document.getElementById('bet__profit').innerHTML = ("<h1>" + BetProfit + "</h1>");
 }
 
-    
 $('.betSubmitDice[type="submit"]').click(function() {
 
     var total = $('#GetFormGame').parent().find('input[name="total"]').val();

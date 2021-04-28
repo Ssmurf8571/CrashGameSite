@@ -7,7 +7,7 @@ session_start();
     $percent = $_POST['percent'];
     $buttonId = $_POST['buttonId'];
 
-    $result = mysqli_query($db,"SELECT balance FROM users WHERE login = ".$_SESSION['login']);
+    $result = mysqli_query($db,"SELECT balance FROM users WHERE login = '".$login."'");
 
     if ($login == '') {
         exit('<h4 style="background: red; display: inline-block; color: #fff;">Вы не авторизовались</h4>');
