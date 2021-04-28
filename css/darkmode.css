@@ -1,5 +1,12 @@
 .dark-mode {
   background-color: #fff;
+}
+
+.dark-mode div, .dark-mode span,  .dark-mode button {
+  color: #000;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6, .dark-mode p {
   color: #000;
 }
 
@@ -69,4 +76,10 @@
 
 .dark-mode #id01 > form > div:nth-child(3) {
   background-color:#ebebeb;
+}
+
+.dark-mode .user-balance {
+  background: #ebebeb;
+  border: 1px solid #969696;
+  color: #000;
 }
