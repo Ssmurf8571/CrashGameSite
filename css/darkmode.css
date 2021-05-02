@@ -87,3 +87,7 @@
 .dark-mode .input__block > label > input {
   color: #000;
 }
+
+.dark-mode .main__wrapper > .left__sidebar {
+  background: #f5f5f5;
+}

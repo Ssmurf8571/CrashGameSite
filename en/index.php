@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="../css/media.css">
 
   <link rel="stylesheet" href="../libs/games/dice/style.css">
+  <link rel="stylesheet" href="../libs/games/wheel/main.css">
 
 	<script src="../libs/modernizr/modernizr.js"></script>
 
@@ -94,12 +95,33 @@
 
   <div class="main__wrapper">
     <div class="left__sidebar">
+      <div class="game__item">
+        <a href="#nviti">
+          <h6>Nvuti</h6>
+        </a>
+      </div>
+      <div class="game__item">
+        <a href="#wheel">
+          <h6>Wheel</h6>
+        </a>
+      </div>
+      <div class="game__item"></div>
+      <div class="game__item"></div>
+      <div class="game__item"></div>
+      <div class="game__item"></div>
+    </div>
+    <div class="center__sidebar">
       <div class="game__block">
         <div class="gameItem">
           <?php
             include('../libs/games/dice/index.html');
           ?>
         </div>
+        <!-- <div class="gameItem">
+          <?php
+            include('../libs/games/wheel/index.html');
+          ?>
+        </div> -->
       </div>
 
       <div class="login__form">
