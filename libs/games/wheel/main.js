@@ -14,20 +14,20 @@ function CheckCheckBox() {
 
 $(document).ready(function() {
     let timer; // пока пустая переменная
-        let x = 3; // стартовое значение обратного отсчета
-        countdown(); // вызов функции
-        function countdown(){  // функция обратного отсчета
-            document.getElementById('checkTime').innerHTML = x;
-            x--; // уменьшаем число на единицу
-            if (x<0){
-                clearTimeout(timer); // таймер остановится на нуле
-                startSpin();
-                return;
-            }
-            else {
-                timer = setTimeout(countdown, 1000);
-            }
+    let x = 15; // стартовое значение обратного отсчета
+    countdown(); // вызов функции
+    function countdown(){  // функция обратного отсчета
+        document.getElementById('checkTime').innerHTML = x;
+        x--; // уменьшаем число на единицу
+        if (x<0){
+            clearTimeout(timer); // таймер остановится на нуле
+            startSpin();
+            return;
         }
+        else {
+            timer = setTimeout(countdown, 1000);
+        }
+    }
         
         // Create new wheel object specifying the parameters at creation time.
         let theWheel = new Winwheel({
