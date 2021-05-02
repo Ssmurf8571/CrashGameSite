@@ -7,7 +7,14 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+	.right__sidebar {
+		position: fixed;
+		right: 0;
+	}
 
+	.right__sidebar #chatwindow {
+		height: calc(100vh - 137px); 
+	}
 }
 
 /* Small Devices, Tablets */
@@ -39,21 +46,12 @@
 		display: none;
 	}
 
-	.right__sidebar #chatwindow {
-		height: calc(100vh - 137px); 
-	}
 
-	.right__sidebar {
-		position: absolute;
-		right: 0;
-	}
+}
 
-	#hideChat.open__chat {
-		top: calc(100% - 74px);
-	}
-
-	#hideChat.close__chat {
-		top: calc(100vh - 235px);
+@media only screen and (max-width : 517px) {
+	.main__wrapper > .left__sidebar {
+		height: auto;
 	}
 }
 
@@ -61,24 +59,6 @@
 @media only screen and (max-width : 480px) {
 	header .app__logo h3 > span:nth-child(2) {
 		display: none;
-	}
-
-	.right__sidebar #chatwindow {
-		height: calc(100vh - 75px); 
-	}
-
-	#hideChat.close__chat {
-		top: calc(100vh - 100px);
-	}
-}
-
-@media only screen and (max-width : 406px) {
-	.right__sidebar #chatwindow {
-		height: 100vh;
-	}
-
-	#hideChat.close__chat {
-		top: calc(100vh - 20px);
 	}
 }
 
@@ -93,7 +73,7 @@
 	}
 
 	.right__sidebar #chatwindow {
-		width: 290px;
+		width: 270px;
 	}
 }
 

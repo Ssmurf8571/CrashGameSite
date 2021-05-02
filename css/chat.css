@@ -10,7 +10,7 @@
 
 .right__sidebar #chatwindow {
     width: 320px;
-    height: calc(100vh - 137px);
+    height: calc(100vh - 138px);
     padding: 10px 0px 0px 10px;
     border-radius: 5px 0px 0px;
     overflow: auto;
