@@ -95,20 +95,9 @@
 
   <div class="main__wrapper">
     <div class="left__sidebar">
-      <div class="game__item">
-        <a href="#nviti">
-          <h6>Nvuti</h6>
-        </a>
-      </div>
-      <div class="game__item">
-        <a href="#wheel">
-          <h6>Wheel</h6>
-        </a>
-      </div>
-      <div class="game__item"></div>
-      <div class="game__item"></div>
-      <div class="game__item"></div>
-      <div class="game__item"></div>
+        <h6 class="game__item">Nvuti</h6>
+        <h6 class="game__item">Wheel</h6>
+        <h6 class="game__item">Slots</h6>
     </div>
     <div class="center__sidebar">
       <div class="game__block">
@@ -117,11 +106,11 @@
             include('../libs/games/dice/index.html');
           ?>
         </div>
-        <!-- <div class="gameItem">
+        <div class="gameItem">
           <?php
             include('../libs/games/wheel/index.html');
           ?>
-        </div> -->
+        </div>
       </div>
 
       <div class="login__form">
