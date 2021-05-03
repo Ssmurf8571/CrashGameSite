@@ -81,3 +81,23 @@ $('#hideChat').click(function() {
 
 	$('#content').animate({width: "toggle"}, 300, function(){});
 });
+
+$(document).ready(function() {
+	GameItem = document.getElementsByClassName('game__item');
+	for(var i=0;i<GameItem.length;i++)
+	{
+
+		GameItem[i].addEventListener("click", function(){
+			var GameItem = document.getElementsByClassName('gameItem');
+			$('.gameItem').css('display', 'none');
+
+			if(this.innerHTML == "Nvuti") {
+				GameItem[0].style.display = "block";
+			}
+			
+			if(this.innerHTML == "Wheel") {
+				GameItem[1].style.display = "block";
+			}
+		});
+	}
+});
