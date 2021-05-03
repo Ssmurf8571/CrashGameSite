@@ -1,3 +1,8 @@
+.right__sidebar  {
+    position: fixed;
+    right: 0;
+}
+
 .right__sidebar #content {
     position: relative;
 }
