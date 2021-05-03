@@ -75,3 +75,15 @@ p {font-size: 12px;}
 .open__chat::after {
 	content: ">";
 }
+
+h6.game__item {
+	cursor: pointer;
+}
+
+.gameItem {
+	display: none;
+}
+
+.gameItem:nth-child(1) {
+	display: block;
+}
