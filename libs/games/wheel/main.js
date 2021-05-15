@@ -1,15 +1,9 @@
-$(document).ready(function() {
-    $('#buttonX2').click(function() { $('#checkboxX2').prop('checked', true); });
-    $('#buttonX3').click(function() { $('#checkboxX3').prop('checked', true); });
-    $('#buttonX5').click(function() { $('#checkboxX5').prop('checked', true); });
-    $('#buttonX20').click(function() { $('#checkboxX20').prop('checked', true); });
-});
-
-function CheckCheckBox() {
-   if($('#checkboxX2').is(':checked')) { var X2 = $('#checkboxX2').val(); } else { X2 = "" }
-   if($('#checkboxX3').is(':checked')) { var X3 = $('#checkboxX3').val(); } else { X3 = "" }
-   if($('#checkboxX5').is(':checked')) { var X5 = $('#checkboxX5').val(); } else { X5 = "" }
-   if($('#checkboxX20').is(':checked')) { var X20 = $('#checkboxX20').val(); } else { X20 = "" }
+function hideInputBox() {
+    console.log('CALL');
+    $('#wheelPost').parent().find('#inputBoxX2').removeClass('active');
+    $('#wheelPost').parent().find('#inputBoxX3').removeClass('active');
+    $('#wheelPost').parent().find('#inputBoxX5').removeClass('active');
+    $('#wheelPost').parent().find('#inputBoxX20').removeClass('active');
 }
 
 $(document).ready(function() {
@@ -144,10 +138,10 @@ $(document).ready(function() {
 
             console.log("You have won " + indicatedSegment.text);
 
-            if($('#checkboxX2').is(':checked')) { var X2 = $('#checkboxX2').val(); } else { X2 = "" }
-            if($('#checkboxX3').is(':checked')) { var X3 = $('#checkboxX3').val(); } else { X3 = "" }
-            if($('#checkboxX5').is(':checked')) { var X5 = $('#checkboxX5').val(); } else { X5 = "" }
-            if($('#checkboxX20').is(':checked')) { var X20 = $('#checkboxX20').val(); } else { X20 = "" }
+            var X2 = $('#checkboxX2').val();
+            var X3 = $('#checkboxX3').val();
+            var X5 = $('#checkboxX5').val();
+            var X20 = $('#checkboxX20').val();
 
             $.ajax({
                 url: "../libs/games/wheel/wheel.php",
@@ -163,6 +157,36 @@ $(document).ready(function() {
                 }
             });
 
+            document.getElementById('inputBoxX2').value='';
+            document.getElementById('inputBoxX3').value='';
+            document.getElementById('inputBoxX5').value='';
+            document.getElementById('inputBoxX20').value='';
+
+            $('#wheelPost').parent().find('input[type=number]').removeClass('active');
+
             countdown(x = 15);
         }
 });
+
+$(document).ready(function() {
+    $('#buttonX2').click(function() {
+        hideInputBox();
+        $('#wheelPost').parent().find('#inputBoxX2').addClass('active');
+    });
+
+    $('#buttonX3').click(function() {
+        hideInputBox();
+        $('#wheelPost').parent().find('#inputBoxX3').addClass('active');
+    });
+
+    $('#buttonX5').click(function() {
+        hideInputBox();
+        $('#wheelPost').parent().find('#inputBoxX5').addClass('active');
+    });
+
+    $('#buttonX20').click(function() {
+        hideInputBox();
+        $('#wheelPost').parent().find('#inputBoxX20').addClass('active');
+    });
+});
+

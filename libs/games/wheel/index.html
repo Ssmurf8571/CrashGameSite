@@ -8,17 +8,19 @@
             </td>
         </tr>
     </table>
-    <input id="buttonX2" type="button" value="X2">
-    <input id="buttonX3" type="button" value="X3">
-    <input id="buttonX5" type="button" value="X5">
-    <input id="buttonX20" type="button" value="X20">
-    <form id="wheelPost" action="" method="post">
-        <input id="checkboxX2" type=checkbox name="boxX2" value="X2" />
-        <input id="checkboxX3" type=checkbox name="boxX3" value="X3" />
-        <input id="checkboxX5" type=checkbox name="boxX5" value="X5" />
-        <input id="checkboxX20" type=checkbox name="boxX20" value="X20" />
-    </form>
-    <div id="testdiv"></div>
+    <div class="wheel-control__panel">
+        <input id="buttonX2" type="button" value="X2">
+        <input id="buttonX3" type="button" value="X3">
+        <input id="buttonX5" type="button" value="X5">
+        <input id="buttonX20" type="button" value="X20">
+        <form id="wheelPost" action="" method="post">
+            <input type="number" name="boxX2" id="inputBoxX2">
+            <input type="number" name="boxX3" id="inputBoxX3">
+            <input type="number" name="boxX5" id="inputBoxX5">
+            <input type="number" name="boxX20" id="inputBoxX20">
+            <i class="fa fa-times fa-1x"></i>
+        </form>
+    </div>
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>

@@ -1,3 +1,7 @@
+i.fa {
+    color: #fff;
+}
+
 .the_wheel {
     position: relative;
 }
@@ -9,10 +13,6 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     z-index: 1;
-}
-
-#wheelPost {
-    display: none;
 }
 
 .main-wrapper_wheel input[type=button] {
@@ -43,4 +43,12 @@
 
 #checkTime {
     color: #fff;
+}
+
+#wheelPost input[type=number] {
+    display: none;
+}
+
+#wheelPost input[type=number].active {
+    display: block;
 }
