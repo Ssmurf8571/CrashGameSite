@@ -46,13 +46,10 @@
 		display: none;
 	}
 
-
-}
-
-@media only screen and (max-width : 517px) {
-	.main__wrapper > .left__sidebar {
-		height: auto;
+	.main__wrapper > .center__sidebar {
+		margin-right: 0	;
 	}
+
 }
 
 /* Extra Small Devices, Phones */
@@ -60,18 +57,28 @@
 	header .app__logo h3 > span:nth-child(2) {
 		display: none;
 	}
+
+	.app__nav__menu .app__nav__page__nightmode {
+		margin: 0 32px 0 0;
+	}
+
+	header .header__wraper > .app__nav__menu {
+		margin: 0;
+		display: block;
+		text-align: center;
+	}
+
+	.right__sidebar #chatwindow {
+		height: calc(100vh - 168px);
+	}
+
+	#canvas {
+		width: 100%;
+	}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 350px) {
-	.app__nav__menu > .app__nav__page__nightmode {
-		margin: 0 auto;
-	}
-
-	.user-balance {
-		margin: 0 auto;
-	}
-
 	.right__sidebar #chatwindow {
 		width: 270px;
 	}

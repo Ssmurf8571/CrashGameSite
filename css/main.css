@@ -8,6 +8,7 @@ html.js .loader {background: none repeat scroll 0 0 #ffffff;bottom: 0;height: 10
 html.js .loader_inner {background-image: url("../img/preloader.gif");background-size: cover;background-repeat: no-repeat;background-position: center center;background-color: #fff;height: 60px;width: 60px;margin-top: -30px;margin-left: -30px;left: 50%;top: 50%;position: absolute;}
 body {
 	min-width: 320px;
+	min-height: calc(100vh - 80px);
 	position: relative;
 	line-height: 1.6;
 	font-family: 'Montserrat', sans-serif;
@@ -39,16 +40,25 @@ p {font-size: 12px;}
 }
 
 .main__wrapper > .center__sidebar {
+	transition: all 300ms;
+	margin-right: 320px;
+	margin-left: 68px;
 	position: relative;
 	width: 100%;
+}
+
+.main__wrapper > .center__sidebar.full-width {
+	margin-right: 0;
 }
 
 .main__wrapper > .left__sidebar {
 	margin: -20px 0 0;
 	padding: 10px 15px;
-	height: calc(100vh - 80px);
+	position: absolute;
+	height: 100%;
 	background: #1f2424;
 	text-align: center;
+	z-index: 1;
 }
 
 .left__sidebar > .game__item {

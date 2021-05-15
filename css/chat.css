@@ -1,4 +1,8 @@
 .right__sidebar  {
+    position: relative;
+}
+
+.right__sidebar > .wrapper-right__sidebar {
     position: fixed;
     right: 0;
 }

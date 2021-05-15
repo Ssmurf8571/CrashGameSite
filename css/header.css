@@ -6,6 +6,7 @@ header {
 header .header__wraper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 header .header__wraper > .app__logo h3 {
@@ -17,13 +18,19 @@ header .header__wraper > .app__nav__menu {
   margin: 6px 0 0;
 }
 
-.app__nav__menu > .app__nav__page__language {
+.app__nav__menu .app__nav__page__language {
+  position: relative;
   text-align: center;
 }
 
-.app__nav__page__language > .app__nav__language__current > a {
+.app__nav__menu > .app__nav__menu__line {
+  display: flex;
+  justify-content: space-around;
+}
+
+.app__nav__page__language .app__nav__language__current > a {
   width: 82px;
-  padding: 1.5px 5px;
+  padding: 7px 5px;
   display: flex;
   justify-content: space-between;
   background-color: #1f2424;
@@ -35,7 +42,7 @@ header .header__wraper > .app__nav__menu {
   text-decoration: none;
 }
 
-.app__nav__language__current #page__language, .app__nav__page__language > .app__nav__language__current svg {
+.app__nav__page__language > .app__nav__language__current svg {
   padding: 5px;
 }
 
@@ -65,16 +72,16 @@ header .header__wraper > .app__nav__menu {
   text-align: left;
 }
 
-.app__nav__menu > .app__nav__page__nightmode {
+.app__nav__menu .app__nav__page__nightmode {
   margin: 0 15px;
-  padding: 5px 5px 0px;
+  padding: 6.5px 7px 0.5px;
   background-color: #1f2424;
   height: fit-content;
   border: 1px solid #242635;
   border-radius: 5px;
 }
 
-.app__nav__menu > .app__nav__page__nightmode svg {
+.app__nav__menu .app__nav__page__nightmode svg {
   color: #fff;
 }
 
