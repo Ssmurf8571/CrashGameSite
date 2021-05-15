@@ -32,18 +32,21 @@ $(document).ready(function(){
 				},
 				success : function(data) {
 					document.getElementById('chatmsg').value='';
-					$.ajax({
-						url : "../libs/chat/post_msg.php",
-						type: "GET",
-						success : function(data) {
-							$('#chatwindow').html(data);
-						}
-					});
 				}
 		});
 		return false;
 
 	});
+
+	setInterval(() => {
+		$.ajax({
+			url : "../libs/chat/post_msg.php",
+			type: "GET",
+			success : function(data) {
+				$('#chatwindow').html(data);
+			}
+		});
+	}, 500);
 	  
 });
 
@@ -79,7 +82,8 @@ $('.user-balance').click(function() {
 $('#hideChat').click(function() {
 	$('#hideChat').toggleClass('open__chat close__chat');
 
-	$('#content').animate({width: "toggle"}, 300, function(){});
+	$('#content').animate({width: "toggle"}, 300);
+	$('.center__sidebar').toggleClass("full-width");
 });
 
 $(document).ready(function() {
