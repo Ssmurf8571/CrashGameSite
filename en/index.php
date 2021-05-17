@@ -23,22 +23,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="stylesheet" href="//kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css">
-
 	<link rel="stylesheet" href="../libs/bootstrap/css/bootstrap-grid.min.css">
 	
-	<link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/chat.css">
-  <link rel="stylesheet" href="../css/auth.css">
 	<link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/darkmode.css">
 	<link rel="stylesheet" href="../css/media.css">
 
-  <link rel="stylesheet" href="../libs/games/dice/style.css">
-  <link rel="stylesheet" href="../libs/games/wheel/main.css">
-
-	<script src="../libs/modernizr/modernizr.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </head>
 
@@ -108,7 +100,7 @@
     </div>
     <div id="center__sidebar" class="center__sidebar">
       <div class="game__block">
-        <div class="gameItem" data-loader="ajax" data-src="../libs/games/dice/index.html"></div>
+        <div class="gameItem"><?php include('../libs/games/dice/index.html'); ?></div>
         <div class="gameItem" data-loader="ajax" data-src="../libs/games/wheel/index.html"></div>
         <div class="gameItem">
           <!-- Slots -->
@@ -140,6 +132,10 @@
     </div>
   </div>
 
+
+  <!-- <iframe src="https://discord.com/widget?id=480484010158587934&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe> -->
+  <!-- VV9Ac3K5xD -->
+
 	<div class="hidden"></div>
 
 	<div class="loader">
@@ -147,13 +143,13 @@
 	</div>
 
   <div>
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
       <script src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/jquery.lazy.min.js"></script>
       <script src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/plugins/jquery.lazy.ajax.min.js"></script>
-      
 
-      <script src="../js/common.js"></script>
-      <script src="../js/autorization.js"></script>
+      <script src="../js/load.js"></script>
+      <script src="../js/styles.js" defer></script>
+      <script src="../js/common.js" defer></script>
+      <script src="../js/autorization.js" defer></script>
 
 
       <script>
