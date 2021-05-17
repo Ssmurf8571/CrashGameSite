@@ -1,14 +1,11 @@
-i.fa {
-    color: #fff;
-}
-
 .the_wheel {
     position: relative;
 }
 .checkValue {
+    margin: 12.5% 0 0;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 55px);
+    transform: translate(-50%, 0);
     border-top: 25px solid #4986f5;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
@@ -45,10 +42,30 @@ i.fa {
     color: #fff;
 }
 
+#wheelPost {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+
 #wheelPost input[type=number] {
     display: none;
 }
 
 #wheelPost input[type=number].active {
+    display: block;
+}
+
+.fa-times {
+    display: none;
+    position: absolute;
+    top: 27.5%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.fa-times.active {
     display: block;
 }
