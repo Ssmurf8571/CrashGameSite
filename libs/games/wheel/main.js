@@ -1,5 +1,5 @@
 function hideInputBox() {
-    console.log('CALL');
+    $('#wheelPost').parent().find('#fa-times').removeClass('active');
     $('#wheelPost').parent().find('#inputBoxX2').removeClass('active');
     $('#wheelPost').parent().find('#inputBoxX3').removeClass('active');
     $('#wheelPost').parent().find('#inputBoxX5').removeClass('active');
@@ -162,7 +162,7 @@ $(document).ready(function() {
             document.getElementById('inputBoxX5').value='';
             document.getElementById('inputBoxX20').value='';
 
-            $('#wheelPost').parent().find('input[type=number]').removeClass('active');
+            hideInputBox();
 
             countdown(x = 15);
         }
@@ -171,22 +171,30 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#buttonX2').click(function() {
         hideInputBox();
+        $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX2').addClass('active');
     });
 
     $('#buttonX3').click(function() {
         hideInputBox();
+        $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX3').addClass('active');
     });
 
     $('#buttonX5').click(function() {
         hideInputBox();
+        $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX5').addClass('active');
     });
 
     $('#buttonX20').click(function() {
         hideInputBox();
+        $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX20').addClass('active');
+    });
+
+    $('#fa-times').click(function() {
+        $('input[type=number].active').val('');
     });
 });
 
