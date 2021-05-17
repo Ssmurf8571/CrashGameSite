@@ -15,7 +15,7 @@
     }
 
     if ($promoName == '') {
-        exit('<h5 style="margin: -30px 0 5px; color: red; font-weight: 700;">Incorrected value</h5>');
+        exit();
     }
 
     $getUserMoney = mysqli_query($db, "SELECT login, balance FROM users WHERE login = '".$login."'");
