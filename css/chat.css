@@ -1,5 +1,6 @@
 .right__sidebar  {
     position: relative;
+    z-index: 3;
 }
 
 .right__sidebar > .wrapper-right__sidebar {
