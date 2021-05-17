@@ -1,10 +1,3 @@
-//Load Page 2:6
-$(window).on('load', function() {
-
-	$(".loader_inner").fadeOut();
-	$(".loader").delay(400).fadeOut("slow");
-});
-
 //Header 9:17
 $( ".app__nav__language__current" ).click(function() {
     var dropdown_btn_lang = document.getElementById('app__nav__language__dropdown');
