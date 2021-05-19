@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    $('head').append('<link rel="stylesheet" href="../libs/games/dice/style.css">');
+});
+
+$(document).ready(function() {
 
     $(".min_price").click(function() {
         $('#prise_input').val(1);
@@ -38,11 +42,6 @@ $(document).ready(function() {
         }
         funcBetPrice();
     }); 
-});
-
-
-
-$(document).ready(function() {
 
     document.getElementById('percent_input').addEventListener('input', function() {
         var percentValue = parseFloat($('#percent_input').val());
@@ -54,25 +53,6 @@ $(document).ready(function() {
             percentValue = 1;
         }
     });
-});
-
-
-
-document.getElementById('prise_input').addEventListener('input', function() {
-    var MaxBalance = parseFloat(document.getElementsByClassName("user-balance")[0].innerHTML);
-    var priseValue = parseFloat($('#prise_input').val());
-
-    if (priseValue >= MaxBalance) {
-        $('#prise_input').val(MaxBalance);
-    } if (priseValue < 1) {
-        $('#prise_input').val(1);
-    } else {
-        return false;
-    }
-});
-
-
-$(document).ready(function() {
 
     $(".min_percent").click(function() {
         $('#percent_input').val('1');
@@ -110,7 +90,18 @@ $(document).ready(function() {
     }); 
 });
 
+document.getElementById('prise_input').addEventListener('input', function() {
+    var MaxBalance = parseFloat(document.getElementsByClassName("user-balance")[0].innerHTML);
+    var priseValue = parseFloat($('#prise_input').val());
 
+    if (priseValue >= MaxBalance) {
+        $('#prise_input').val(MaxBalance);
+    } if (priseValue < 1) {
+        $('#prise_input').val(1);
+    } else {
+        return false;
+    }
+});
 
 document.getElementById('percent_input').addEventListener('input', funcBetPrice);
 document.getElementById('prise_input').addEventListener('input', funcBetPrice);

@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $('head').append('<link rel="stylesheet" href="../libs/games/wheel/main.css">');
+});
+
 function hideInputBox() {
     $('#wheelPost').parent().find('#fa-times').removeClass('active');
     $('#wheelPost').parent().find('#inputBoxX2').removeClass('active');
