@@ -45,13 +45,12 @@ $(document).ready(function(){
 
 // Scroll Chat and Clear Hash 51:66 
 $(document).ready(function(){
-
 	//Scroll Chat
 	setInterval(() => {
 		$('#chatwindow').animate({
 		scrollTop: $('#chatwindow').get(0).scrollHeight}, 3500);
 	}, 1000);
-
+	
 	//Clear Hash
 	$('.clear__hash').click(function(e){
 		window.location.hash = '';
@@ -97,4 +96,16 @@ $(document).ready(function() {
 			}
 		});
 	}
+});
+
+$( "#login_btn" ).click(function() {
+
+    document.getElementById("id01").style.display = "block";
+    var modal = document.getElementById('id01');
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
