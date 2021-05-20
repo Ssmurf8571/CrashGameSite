@@ -97,18 +97,18 @@
         <h6 class="game__item">Slots</h6>
     </div>
     <div id="center__sidebar" class="center__sidebar">
-      <!-- <div class="game__block">
+      <div class="game__block">
         <div class="gameItem"><?php include('../libs/games/dice/index.html'); ?></div>
         <div class="gameItem" data-loader="ajax" data-src="../libs/games/wheel/index.html"></div>
-        <div class="gameItem"> -->
+        <div class="gameItem">
           <!-- Slots -->
           <!-- https://codepen.io/tangxuguo/pen/xqrNmx -->
           <!-- https://josex2r.github.io/jQuery-SlotMachine/ -->
 
           <!-- Loto -->
           <!-- https://codepen.io/AdrianSandu/pen/MyBQYz -->
-        <!-- </div>
-      </div> -->
+        </div>
+      </div>
 
       <div class="login__form" data-loader="ajax" data-src="../login.html"></div>
       <div class="register_form" data-loader="ajax" data-src="../register.html"></div>
@@ -145,17 +145,16 @@
       <script src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/jquery.lazy.min.js"></script>
       <script src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/plugins/jquery.lazy.ajax.min.js"></script>
 
-      <script src="../js/load.js"></script>
-      <script src="../js/common.js"></script>
-      <script src="../js/styles.js"></script>
-
-
-
       <script>
         $(function() {
           $("div[data-src]").Lazy();
         });
       </script>
+      
+
+      <script src="../js/load.js"></script>
+      <script src="../js/common.js" defer></script>
+      <script src="../js/styles.js" async></script>
   </div>
 
 </body>
