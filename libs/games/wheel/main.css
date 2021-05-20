@@ -51,6 +51,7 @@
 
 #wheelPost input[type=number] {
     display: none;
+    margin: 20px 0 50px;
 }
 
 #wheelPost input[type=number].active {
@@ -68,4 +69,35 @@
 
 .fa-times.active {
     display: block;
+}
+
+#selectedValue {
+    display: none;
+    position: absolute;
+    left: 50%;
+    border-top: 13px solid #4986f5;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    transition: transform 1s;
+    z-index: 2;
+}
+
+#selectedValue.active {
+    display: block;
+}
+
+#selectedValue.active.X2 {
+    transform: translate(-94px, 3px);
+}
+
+#selectedValue.active.X3 {
+    transform: translate(-39px, 3px);
+}
+
+#selectedValue.active.X5 {
+    transform: translate(16px, 3px);
+}
+
+#selectedValue.active.X20 {
+    transform: translate(75px, 3px);
 }
