@@ -1,11 +1,13 @@
 $( ".close" ).click(function() {
-    document.getElementById("id01").style.display = "none";
-    document.getElementById("id02").style.display = "none";
+    document.querySelectorAll('.modal').forEach(function(el) {
+        el.style.display = 'none';
+    });
 });
 
 $(".cancelbtn").click(function() {
-    document.getElementById("id01").style.display = "none";
-    document.getElementById("id02").style.display = "none";
+    document.querySelectorAll('.modal').forEach(function(el) {
+        el.style.display = 'none';
+    });
 });
 
 $( ".register_btn" ).click(function() {
