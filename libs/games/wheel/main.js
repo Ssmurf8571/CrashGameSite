@@ -8,11 +8,12 @@ function hideInputBox() {
     $('#wheelPost').parent().find('#inputBoxX3').removeClass('active');
     $('#wheelPost').parent().find('#inputBoxX5').removeClass('active');
     $('#wheelPost').parent().find('#inputBoxX20').removeClass('active');
+    $('#wheelPost').parent().find('#selectedValue').removeClass('active X2 X3 X5 X20');
 }
 
 $(document).ready(function() {
     let timer; // пока пустая переменная
-    let x = 15; // стартовое значение обратного отсчета
+    let x = 5; // стартовое значение обратного отсчета
     countdown(); // вызов функции
     function countdown(){  // функция обратного отсчета
         document.getElementById('checkTime').innerHTML = x;
@@ -142,10 +143,11 @@ $(document).ready(function() {
 
             console.log("You have won " + indicatedSegment.text);
 
-            var X2 = $('#checkboxX2').val();
-            var X3 = $('#checkboxX3').val();
-            var X5 = $('#checkboxX5').val();
-            var X20 = $('#checkboxX20').val();
+            var X2 = $('#inputBoxX2').val();
+            var X3 = $('#inputBoxX3').val();
+            var X5 = $('#inputBoxX5').val();
+            var X20 = $('#inputBoxX20').val();
+            var win = indicatedSegment.text;
 
             $.ajax({
                 url: "../libs/games/wheel/wheel.php",
@@ -154,10 +156,11 @@ $(document).ready(function() {
                     X2 : X2,
                     X3 : X3,
                     X5 : X5,
-                    X20 : X20
+                    X20 : X20,
+                    win : win
                 },
                 success : function(data) {
-                    $('#testdiv').html(data);
+                    alert(data);
                 }
             });
 
@@ -177,24 +180,28 @@ $(document).ready(function() {
         hideInputBox();
         $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX2').addClass('active');
+        $('#wheelPost').parent().find('#selectedValue').addClass('active X2');
     });
 
     $('#buttonX3').click(function() {
         hideInputBox();
         $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX3').addClass('active');
+        $('#wheelPost').parent().find('#selectedValue').addClass('active X3');
     });
 
     $('#buttonX5').click(function() {
         hideInputBox();
         $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX5').addClass('active');
+        $('#wheelPost').parent().find('#selectedValue').addClass('active X5');
     });
 
     $('#buttonX20').click(function() {
         hideInputBox();
         $('#wheelPost').parent().find('#fa-times').addClass('active');
         $('#wheelPost').parent().find('#inputBoxX20').addClass('active');
+        $('#wheelPost').parent().find('#selectedValue').addClass('active X20');
     });
 
     $('#fa-times').click(function() {
