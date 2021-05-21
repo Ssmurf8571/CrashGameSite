@@ -154,7 +154,7 @@
 
       <script src="../js/load.js"></script>
       <script src="../js/common.js" defer></script>
-      <script src="../js/styles.js" async></script>
+      <script src="../js/styles.js" defer></script>
   </div>
 
 </body>
