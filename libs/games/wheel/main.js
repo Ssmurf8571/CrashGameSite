@@ -160,7 +160,8 @@ $(document).ready(function() {
                     win : win
                 },
                 success : function(data) {
-                    alert(data);
+                    $('#UserBalanceWheel').html(data);
+                    $('.user-balance').html(document.getElementById('UserBalanceWheel').innerHTML);
                 }
             });
 

@@ -10,15 +10,16 @@
 
     $result = mysqli_query($db,"SELECT balance FROM `users` WHERE login = '".$_SESSION['login']."'");
 
-    if ($login == '') {
-        exit('<h4 style="background: red; display: inline-block;">Вы не авторизовались</h4>');
-    }
+    if ($login == '') { exit(); }
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $balance = $row['balance'];
-    }
+    while ($row = mysqli_fetch_assoc($result)) { $balance = $row['balance']; }
 
-    checkValue();
+    checkValue($balance, $X2, $X3, $X5, $X20);
+
+    if($X2 == '') { $X2 = 0; }
+    if($X3 == '') { $X3 = 0; }
+    if($X5 == '') { $X5 = 0; }
+    if($X20 == '') { $X20 = 0; }
 
     if ($Win == "green") {
         $balance = $balance - $X2 - $X3 - $X5 - $X20;
@@ -48,75 +49,14 @@
         $balance = $balance + $X20;
     }
 
-
-    // if ($X2 !== "") {
-    //     $balance = $balance - $X2;
-    //     $X2 = $X2 * 3;
-    //     $balance = $balance + $X2;
-    //     // $query = mysqli_query($db,"UPDATE `users` SET `balance`='".$balance."' WHERE login = '".$_SESSION['login']."'");
-    // }
-
+    $query = mysqli_query($db,"UPDATE `users` SET `balance`='".$balance."' WHERE login = '".$login."'");
 
     echo $balance;
 
-    function NULLvalue($balance) {
-        echo $balance;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // function greenWin($balance, $X2) {
-    //     if ($X2 !== "") {
-    //         $X2 = $X2 * 3;
-    //         $balance = $balance + $X2;
-    //         // $query = mysqli_query($db,"UPDATE `users` SET `balance`='".$balance."' WHERE login = '".$_SESSION['login']."'");
-    //         $sql = "UPDATE `users` SET `balance` = ".$balance." WHERE login = '".$_SESSION['login']."'";
-    //         echo $sql;
-    //     }
-    // }
-    // function blueWin($balance, $X3) {
-    //     if ($X3 !== "") {
-    //         $X3 = $X3 * 4;
-    //         $balance = $balance + $X3;
-    //         // $query = mysqli_query($db,"UPDATE `users` SET `balance`='".$balance."' WHERE login = '".$_SESSION['login']."'");
-    //         $sql = "UPDATE `users` SET `balance` = ".$balance." WHERE login = '".$_SESSION['login']."'";
-    //         echo $sql;
-    //     }
-    // }
-
-    function checkValue() {
-        if ($balance < $X2) {
-            exit();
-        }
-        if ($balance < $X3) {
-            exit();
-        }
-        if ($balance < $X5) {
-            exit();
-        }
-        if ($balance < $X20) {
-            exit();
-        }
+    function checkValue($balance, $X2, $X3, $X5, $X20) {
+        if ($balance < $X2) { exit(); }
+        if ($balance < $X3) { exit(); }
+        if ($balance < $X5) { exit(); }
+        if ($balance < $X20) { exit(); }
     }
 ?>
