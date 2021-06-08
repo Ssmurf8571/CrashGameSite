@@ -13,7 +13,7 @@ function hideInputBox() {
 
 $(document).ready(function() {
     let timer; // пока пустая переменная
-    let x = 5; // стартовое значение обратного отсчета
+    let x = 15; // стартовое значение обратного отсчета
     countdown(); // вызов функции
     function countdown(){  // функция обратного отсчета
         document.getElementById('checkTime').innerHTML = x;
