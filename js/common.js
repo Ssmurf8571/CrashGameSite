@@ -1,3 +1,9 @@
+$(window).on('load', function() {
+
+	$(".loader_inner").fadeOut();
+	$(".loader").delay(400).fadeOut("slow");
+});
+
 //Header 9:17
 $( ".app__nav__language__current" ).click(function() {
     var dropdown_btn_lang = document.getElementById('app__nav__language__dropdown');
@@ -93,6 +99,10 @@ $(document).ready(function() {
 			
 			if(this.innerHTML == "Wheel") {
 				GameItem[1].style.display = "block";
+			}
+
+			if(this.innerHTML == "Slots") {
+				GameItem[2].style.display = "block";
 			}
 		});
 	}
