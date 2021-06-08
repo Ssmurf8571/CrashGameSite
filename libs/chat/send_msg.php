@@ -1,5 +1,5 @@
 <?php
-    require '../authorization/db.php';
+    include('../db.php');
 
     date_default_timezone_set('ALL');
 

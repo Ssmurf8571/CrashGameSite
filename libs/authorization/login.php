@@ -11,7 +11,7 @@
   $login = trim($login);
   $password = trim($password);
 
-  include ("db.php");
+  include ("../db.php");
 
   $result = mysqli_query($db, "SELECT * FROM users WHERE login='$login'"); 
   $myrow = mysqli_fetch_array($result);

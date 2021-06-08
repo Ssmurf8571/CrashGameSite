@@ -1,6 +1,6 @@
 <?php
 session_start();
-    $db = @new mysqli("localhost","root","root","db_piroll");
+    include('../../db.php');
 
     $login = $_SESSION['login'];
     $total = $_POST['total'];

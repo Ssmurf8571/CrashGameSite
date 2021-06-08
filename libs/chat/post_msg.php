@@ -1,6 +1,6 @@
 <?php
 
-    require __DIR__ . '/../authorization/db.php';
+    require __DIR__ . '/../db.php';
 
     $result = mysqli_query($db,"SELECT user, date, message FROM message");
     while ($row = $result->fetch_assoc()) {
