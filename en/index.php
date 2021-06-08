@@ -23,7 +23,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="stylesheet" href="../libs/bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
 	
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/chat.css">
@@ -44,7 +44,7 @@
         </div>
         <div class="app__nav__menu">
           <div class="app__nav__menu__line">
-            <div class="app__nav__page__language">
+            <div class="app__nav__page__language text-center">
               <div class="app__nav__language__current">
                 <a href="#" class="clear__hash">
                   <span id="page__language">en</span>
@@ -66,7 +66,7 @@
             <?php
               if(isset($_SESSION['login'])) 
               {
-                include('../libs/authorization/db.php');
+                include('../libs/db.php');
                 $result = mysqli_query($db,"SELECT balance FROM users WHERE login = '".$_SESSION['login']."'");
 
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -91,16 +91,17 @@
   </header>
 
   <div class="main__wrapper">
-    <div class="left__sidebar">
+    <div class="left__sidebar text-center">
         <h6 class="game__item">Nvuti</h6>
         <h6 class="game__item">Wheel</h6>
         <h6 class="game__item">Slots</h6>
     </div>
     <div id="center__sidebar" class="center__sidebar">
       <div class="game__block">
-        <div class="gameItem"><?php include('../libs/games/dice/index.html'); ?></div>
-        <div class="gameItem" data-loader="ajax" data-src="../libs/games/wheel/index.html"></div>
+        <div class="gameItem" id="nvuti"></div>
+        <div class="gameItem" id="wheel"></div>
         <div class="gameItem">
+          <h1 style="position: fixed;top: 50%;width: 100%;transform: rotate(315deg);text-align: center;background: yellow;color: black;font-weight: 700;font-family: fantasy;text-transform: uppercase;">in developing</h1>
           <!-- Slots -->
           <!-- https://codepen.io/tangxuguo/pen/xqrNmx -->
           <!-- https://josex2r.github.io/jQuery-SlotMachine/ -->
@@ -110,17 +111,18 @@
         </div>
       </div>
 
-      <div class="login__form" data-loader="ajax" data-src="../login.html"></div>
-      <div class="register_form" data-loader="ajax" data-src="../register.html"></div>
-      <div class="promo_box" data-loader="ajax" data-src="../libs/promo/promo.html"></div>
+      <div class="login__form" id="login__form"></div>
+      <div class="register_form" id="register_form"></div>
+      <div class="promo_box" id="promo_box"></div>
+      <div id="formDonate" class="modal"></div>
     </div>
     <div class="right__sidebar">
       <div class="wrapper-right__sidebar">
         <form id="content" action="" method="POST">
-        <div id="chatwindow"  data-loader="ajax" data-src="../libs/chat/post_msg.php"></div>
+        <div id="chatwindow"></div>
         <br>
         <?php
-          echo '<input id="chatnick" value="'.$_SESSION['login'].'" name="login">';
+          echo '<input id="chatnick" class="hide" value="'.$_SESSION['login'].'" name="login">';
         ?>
         <input id="chatmsg" type="text" name="msg" placeholder="message" autocomplete="off">
         <button id="submit-msg" type="submit"></button>
@@ -141,20 +143,11 @@
 	</div>
 
   <div>
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-      <script src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/jquery.lazy.min.js"></script>
-      <script src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/plugins/jquery.lazy.ajax.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" defer></script>
 
-      <script>
-        $(function() {
-          $("div[data-src]").Lazy();
-        });
-      </script>
-      
-
-      <script src="../js/load.js"></script>
       <script src="../js/common.js" defer></script>
       <script src="../js/styles.js" defer></script>
+      <script src="../js/load.js" defer></script>
   </div>
 
 </body>
