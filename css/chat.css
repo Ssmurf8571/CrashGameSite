@@ -56,3 +56,9 @@
     color: #969696;
     font-size: 10px;
 }
+
+#chatwindow > span > xmp {
+    display: contents;
+    white-space: break-spaces;
+    word-break: break-word;
+}
