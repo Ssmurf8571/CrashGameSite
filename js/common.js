@@ -104,6 +104,10 @@ $(document).ready(function() {
 			if(this.innerHTML == "Slots") {
 				GameItem[2].style.display = "block";
 			}
+
+			if(this.innerHTML == "Loto") {
+				GameItem[3].style.display = "block";
+			}
 		});
 	}
 });
