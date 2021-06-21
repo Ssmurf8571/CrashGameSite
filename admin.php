@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    if($_SESSION['balance']) {}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
