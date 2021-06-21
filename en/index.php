@@ -95,17 +95,16 @@
         <h6 class="game__item">Nvuti</h6>
         <h6 class="game__item">Wheel</h6>
         <h6 class="game__item">Slots</h6>
+        <h6 class="game__item">Loto</h6>
+
     </div>
     <div id="center__sidebar" class="center__sidebar">
       <div class="game__block">
         <div class="gameItem" id="nvuti"></div>
         <div class="gameItem" id="wheel"></div>
+        <div class="gameItem" id="slots"></div>
         <div class="gameItem">
-          <h1 style="position: fixed;top: 50%;width: 100%;transform: rotate(315deg);text-align: center;background: yellow;color: black;font-weight: 700;font-family: fantasy;text-transform: uppercase;">in developing</h1>
-          <!-- Slots -->
-          <!-- https://codepen.io/tangxuguo/pen/xqrNmx -->
-          <!-- https://josex2r.github.io/jQuery-SlotMachine/ -->
-
+          <h1 style="position: fixed;top: 50%;margin: 0 -1000px 0;width: 3000px;transform: rotate(315deg);text-align: center;background: yellow;color: black;font-weight: 700;font-family: fantasy;text-transform: uppercase;">in developing</h1>
           <!-- Loto -->
           <!-- https://codepen.io/AdrianSandu/pen/MyBQYz -->
         </div>
@@ -145,9 +144,9 @@
   <div>
       <script src="https://code.jquery.com/jquery-3.5.1.min.js" defer></script>
 
+      <script src="../js/load.js" defer></script>
       <script src="../js/common.js" defer></script>
       <script src="../js/styles.js" defer></script>
-      <script src="../js/load.js" defer></script>
   </div>
 
 </body>
