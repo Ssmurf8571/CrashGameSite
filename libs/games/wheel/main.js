@@ -3,12 +3,12 @@ $(document).ready(function() {
 });
 
 function hideInputBox() {
-    $('#wheelPost').parent().find('#fa-times').removeClass('active');
-    $('#wheelPost').parent().find('#inputBoxX2').removeClass('active');
-    $('#wheelPost').parent().find('#inputBoxX3').removeClass('active');
-    $('#wheelPost').parent().find('#inputBoxX5').removeClass('active');
-    $('#wheelPost').parent().find('#inputBoxX20').removeClass('active');
-    $('#wheelPost').parent().find('#selectedValue').removeClass('active X2 X3 X5 X20');
+    $('#wheelPost').find('#fa-times').removeClass('active');
+    $('#wheelPost').find('#inputBoxX2').removeClass('active');
+    $('#wheelPost').find('#inputBoxX3').removeClass('active');
+    $('#wheelPost').find('#inputBoxX5').removeClass('active');
+    $('#wheelPost').find('#inputBoxX20').removeClass('active');
+    $('#wheelPost').find('#selectedValue').removeClass('active X2 X3 X5 X20');
 }
 
 $(document).ready(function() {
@@ -165,10 +165,7 @@ $(document).ready(function() {
                 }
             });
 
-            document.getElementById('inputBoxX2').value='';
-            document.getElementById('inputBoxX3').value='';
-            document.getElementById('inputBoxX5').value='';
-            document.getElementById('inputBoxX20').value='';
+            $('#wheelPost').find('input[type=number]').val('');
 
             hideInputBox();
 
@@ -179,34 +176,34 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#buttonX2').click(function() {
         hideInputBox();
-        $('#wheelPost').parent().find('#fa-times').addClass('active');
-        $('#wheelPost').parent().find('#inputBoxX2').addClass('active');
-        $('#wheelPost').parent().find('#selectedValue').addClass('active X2');
+        $('#wheelPost').find('#fa-times').addClass('active');
+        $('#wheelPost').find('#inputBoxX2').addClass('active');
+        $('#wheelPost').find('#selectedValue').addClass('active X2');
     });
 
     $('#buttonX3').click(function() {
         hideInputBox();
-        $('#wheelPost').parent().find('#fa-times').addClass('active');
-        $('#wheelPost').parent().find('#inputBoxX3').addClass('active');
-        $('#wheelPost').parent().find('#selectedValue').addClass('active X3');
+        $('#wheelPost').find('#fa-times').addClass('active');
+        $('#wheelPost').find('#inputBoxX3').addClass('active');
+        $('#wheelPost').find('#selectedValue').addClass('active X3');
     });
 
     $('#buttonX5').click(function() {
         hideInputBox();
-        $('#wheelPost').parent().find('#fa-times').addClass('active');
-        $('#wheelPost').parent().find('#inputBoxX5').addClass('active');
-        $('#wheelPost').parent().find('#selectedValue').addClass('active X5');
+        $('#wheelPost').find('#fa-times').addClass('active');
+        $('#wheelPost').find('#inputBoxX5').addClass('active');
+        $('#wheelPost').find('#selectedValue').addClass('active X5');
     });
 
     $('#buttonX20').click(function() {
         hideInputBox();
-        $('#wheelPost').parent().find('#fa-times').addClass('active');
-        $('#wheelPost').parent().find('#inputBoxX20').addClass('active');
-        $('#wheelPost').parent().find('#selectedValue').addClass('active X20');
+        $('#wheelPost').find('#fa-times').addClass('active');
+        $('#wheelPost').find('#inputBoxX20').addClass('active');
+        $('#wheelPost').find('#selectedValue').addClass('active X20');
     });
 
     $('#fa-times').click(function() {
-        $('input[type=number].active').val('');
+        $('#wheelPost').find('input[type=number].active').val('');
     });
 });
 

@@ -16,49 +16,43 @@
 
     while ($row = mysqli_fetch_assoc($result)) { $balance = $row['balance']; }
 
+    function checkValue($balance, $X2, $X3, $X5, $X20) {
+        if ($balance < $X2 || $X2 == '') { $X2 = 0; }
+        if ($balance < $X3 || $X3 == '') { $X3 = 0; }
+        if ($balance < $X5 || $X5 == '') { $X5 = 0; }
+        if ($balance < $X20 || $X20 == '') { $X20 = 0; }
+        $balance = $balance - $X2 - $X3 - $X5 - $X20;
+    }
+
     checkValue($balance, $X2, $X3, $X5, $X20);
 
-    if($X2 == '') { $X2 = 0; }
-    if($X3 == '') { $X3 = 0; }
-    if($X5 == '') { $X5 = 0; }
-    if($X20 == '') { $X20 = 0; }
-
     if ($Win == "green") {
-        $balance = $balance - $X2 - $X3 - $X5 - $X20;
-        if ($X2 == "") { exit($balance); }
+        if ($X2 == "" || $X2 = 0) { exit($balance); }
         $X2 = $X2 * 2;
         $balance = $balance + $X2;
     }
 
     if ($Win == "blue") {
-        $balance = $balance - $X2 - $X3 - $X5 - $X20;
-        if ($X3 == "") { exit($balance); }
+        if ($X3 == "" || $X3 = 0) { exit($balance); }
         $X3 = $X3 * 3;
         $balance = $balance + $X3;
     }
 
     if ($Win == "red") {
-        $balance = $balance - $X2 - $X3 - $X5 - $X20;
-        if ($X5 == "") { exit($balance); }
+        if ($X5 == "" || $X5 = 0) { exit($balance); }
         $X5 = $X5 * 5;
         $balance = $balance + $X5;
     }
 
     if ($Win == "gold") {
-        $balance = $balance - $X2 - $X3 - $X5 - $X20;
-        if ($X20 == "") { exit($balance); }
+        if ($X20 == "" || $X20 = 0) { exit($balance); }
         $X20 = $X20 * 20;
         $balance = $balance + $X20;
     }
 
     $query = mysqli_query($db,"UPDATE `users` SET `balance`='".$balance."' WHERE login = '".$login."'");
 
-    echo $balance;
 
-    function checkValue($balance, $X2, $X3, $X5, $X20) {
-        if ($balance < $X2) { exit(); }
-        if ($balance < $X3) { exit(); }
-        if ($balance < $X5) { exit(); }
-        if ($balance < $X20) { exit(); }
-    }
+    echo $balance;
+    
 ?>
